@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 22931612}
+  - component: {fileID: 22931616}
   - component: {fileID: 22931611}
   - component: {fileID: 22931614}
   - component: {fileID: 22931613}
@@ -195,12 +196,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3720a034538d6f741a01f1245cfb94f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TurnRepeater: {fileID: 22931616}
   Warehouse: {fileID: 22931613}
   PlanningModule: {fileID: 22931611}
   Market: {fileID: 739261426}
   Needs: []
-  consumeRate: 0
-  productivityRate: 0
+  ConsumeRate: 0
+  ProductivityRate: 0
   ProductionResource:
     Name: 0
     Amount: 0
@@ -222,6 +224,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cityClass: 0
   CityLandmass: 100
+--- !u!114 &22931616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22931610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e1eb0fe447e9349bb6f441a38638bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Strats: []
 --- !u!1 &176946616
 GameObject:
   m_ObjectHideFlags: 0

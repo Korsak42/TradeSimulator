@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Sirenix.OdinInspector;
+[ShowOdinSerializedPropertiesInInspector]
 public class TurnRepeater : MonoBehaviour
 {
     public ISettlement Settlement;
-    public List<IStrat> Strats;
-    public List<IProducer> Producers;
-    public List<IServiceman> Servicemen;
-    public List<IBuyer> Buyers;
-    public List<IConsumer> Consumers;
-    public List<ISeller> Sellers;
+    public List<Strat> Strats = new List<Strat>();
+    public List<IProducer> Producers = new List<IProducer>();
+    public List<IServiceman> Servicemen = new List<IServiceman>();
+    public List<IBuyer> Buyers = new List<IBuyer>();
+    public List<IConsumer> Consumers = new List<IConsumer>();
+    public List<ISeller> Sellers = new List<ISeller>();
     public INoble Noble;
 
-    public void SubsribeStrat(IStrat strat)
+    public void SubsribeStrat(Strat strat)
     {
         Strats.Add(strat);
     }

@@ -5,79 +5,11 @@ using Sirenix.OdinInspector;
 using System;
 using System.Linq;
 
-public class Peasants : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller, IProducer
+public class Peasants : Strat, IConsumer, IBuyer, ISeller, IProducer
 {
-    public ISettlement Settlement;
 
-    public TurnRepeater TurnRepeater;
-
-    public Warehouse Warehouse;
-    public StratPlanningModule PlanningModule;
-    public Market Market;
-
-    public List<Resource> Needs;
-
-    [SerializeField]
-    private float consumeRate;
-    [SerializeField]
-    private float productivityRate;
-
-
-    private double gold;
-    public double Gold
-    {
-        set
-        {
-            gold = value;
-            GoldUpdate?.Invoke(gold);
-        }
-        get => gold;
-    }
-    private double population;
-    public double Population
-    {
-        set
-        {
-            population = value;
-            PopulationUpdate?.Invoke(population);
-        }
-        get => population;
-    }
-
-    public Resource ProductionResource;
-    public double StarvedPopulation;
-    public int DaysStarved;
-
-    private float happy;
-    public float Happy
-    {
-        set
-        {
-            happy = value;
-            HappyUpdate?.Invoke(happy);
-        }
-        get => happy;
-    }
-
-    private float health;
-    public float Health
-    {
-        set
-        {
-            health = value;
-            HealthUpdate?.Invoke(health);
-        }
-        get => health;
-    }
-
-    public Action<double> GoldUpdate;
-    public Action<double> PopulationUpdate;
-
-    public Action<float> HappyUpdate;
-    public Action<float> HealthUpdate;
     private void Awake()
     {
-        SubsribeStrat();
         SubsribeSeller();
         SubsribeProducer();
         SubsribeConsumer();
@@ -100,125 +32,7 @@ public class Peasants : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller, IProd
     {
         return Needs.FirstOrDefault(x => x.Name == resourceName);
     }
-    #region IStrat
-    public void GlobalInit()
-    {
-        ProductionResource = DataKeeper.instance.GetResourceList().GetRandomResource();
-        InitNeeds();
-        SetProductionResource();
-    }
-    public void Initialization()
-    {
-        StarvedPopulation = 0;
-    }
-    public void SubsribeStrat()
-    {
-        TurnRepeater.SubsribeStrat(this);
-    }
 
-
-    public double GetPopulation()
-    {
-        return population;
-    }
-
-    public double GetGold()
-    {
-        return gold;
-    }
-
-    public void ChangePopulation(float _population)
-    {
-        Population = _population;
-    }
-
-    public void ChangeGold(float _gold)
-    {
-        Gold = _gold;
-    }
-    public float GetHeatlh()
-    {
-        return health;
-    }
-
-    public float GetHappy()
-    {
-        return happy;
-    }
-
-    public void ChangeHealth(float amount, bool isPositive)
-    {
-        if (isPositive)
-            Health += amount;
-        else
-            Health -= amount;
-    }
-
-    public void ChangeHappy(float amount, bool isPositive)
-    {
-        if (isPositive)
-            Happy += amount;
-        else
-            Happy -= amount;
-    }
-
-
-
-    public void ChangeGold(double amount, bool isPositive)
-    {
-        if (isPositive)
-            Gold += amount;
-        else
-            Gold -= amount;
-    }
-
-
-    public void ChangePopulation(double amount, bool isPositive)
-    {
-        if (isPositive)
-            Population += amount;
-        else
-            Population -= amount;
-    }
-    public Warehouse GetWarehouse()
-    {
-        return Warehouse;
-    }
-
-    public Market GetMarket()
-    {
-        return Market;
-    }
-
-    public float GetConsumeRate()
-    {
-        return consumeRate;
-    }
-
-    public void ChangeConsumeRate(float amount, bool isPositive)
-    {
-        if (isPositive)
-        {
-            consumeRate += amount;
-        }
-        else
-        {
-            consumeRate -= amount;
-        }
-    }
-
-    public void ChangeProductivityRate(float amount, bool isPositive)
-    {
-        if (isPositive)
-        {
-            productivityRate += amount;
-        }
-        else
-        {
-            productivityRate -= amount;
-        }
-    }
-    #endregion IStrat
     #region IConsumer
     public void SubsribeConsumer()
     {
@@ -228,7 +42,7 @@ public class Peasants : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller, IProd
     public void ConsumeFood(double amount)
     {
         var consumableResource = EnumResource.ResourceName.Food;
-        var amountToConsume = population * consumeRate;
+        var amountToConsume = Population * ConsumeRate;
         var consumedAmount = Consume(consumableResource, amountToConsume);
         if (consumedAmount != double.NaN)
         {
@@ -247,7 +61,7 @@ public class Peasants : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller, IProd
     public double ConsumeTools(double amount)
     {
         var consumableResource = EnumResource.ResourceName.Tools;
-        var amountToConsume = Settlement.GetWorkArea() * productivityRate;
+        var amountToConsume = Settlement.GetWorkArea() * ProductivityRate;
         var consumedAmount = Consume(consumableResource, amountToConsume);
         if (consumedAmount != double.NaN)
         {
@@ -295,16 +109,16 @@ public class Peasants : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller, IProd
         var resource = GetProductionResource();
         var square = Settlement.GetWorkArea();
         var consumedTools = ConsumeTools(square);
-        if (population > square)
+        if (Population > square)
         {
-            var producedResourceAmount = square * productivityRate * DataKeeper.instance.GetResourceList().GetDefaultAmount(resource.Name);
+            var producedResourceAmount = square * ProductivityRate * DataKeeper.instance.GetResourceList().GetDefaultAmount(resource.Name);
             Warehouse.ChangeAmount(ProductionResource.Name, producedResourceAmount, true);
             if (producedResourceAmount > GetResourceFromNeeds(resource.Name).Amount)
                 SellGood(ProductionResource.Name, producedResourceAmount - GetResourceFromNeeds(resource.Name).Amount);
         }
         else
         {
-            var producedResourceAmount = population * DataKeeper.instance.GetResourceList().GetDefaultAmount(resource.Name);
+            var producedResourceAmount = Population * DataKeeper.instance.GetResourceList().GetDefaultAmount(resource.Name);
             Warehouse.ChangeAmount(ProductionResource.Name, producedResourceAmount, true);
             if (producedResourceAmount > GetResourceFromNeeds(resource.Name).Amount)
                 SellGood(ProductionResource.Name, producedResourceAmount - GetResourceFromNeeds(resource.Name).Amount);
@@ -347,15 +161,15 @@ public class Peasants : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller, IProd
     {
         var price = Market.CalculateBuyPrice(resource.Name, amount);
         var cost = price * amount;
-        if (gold > 1)
+        if (Gold > 1)
         {
-            if (gold > cost)
+            if (Gold > cost)
             {
                 MakePurchase(resource.Name, amount);
             }
             else
             {
-                var newAmount = gold / price;
+                var newAmount = Gold / price;
                 MakePurchase(resource.Name, newAmount);
             }
         }
@@ -382,7 +196,7 @@ public class Peasants : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller, IProd
 
     public void Restock(EnumResource.ResourceName resourceName)
     {
-        var restockAmount = population / DataKeeper.instance.Constants.RestockDivider;
+        var restockAmount = Population / DataKeeper.instance.Constants.RestockDivider;
         MakePurchase(resourceName, restockAmount);
     }
 

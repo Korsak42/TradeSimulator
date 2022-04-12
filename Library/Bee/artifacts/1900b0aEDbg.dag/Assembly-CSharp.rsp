@@ -356,6 +356,7 @@
 "Assets/Scripts/Classes/Market.cs"
 "Assets/Scripts/Classes/Peasants.cs"
 "Assets/Scripts/Classes/Resource.cs"
+"Assets/Scripts/Classes/Strat.cs"
 "Assets/Scripts/Classes/Village.cs"
 "Assets/Scripts/Classes/Warehouse.cs"
 "Assets/Scripts/Data/CityStructureData.cs"

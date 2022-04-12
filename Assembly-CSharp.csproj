@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Classes\Village.cs" />
     <Compile Include="Assets\Scripts\Data\Constants.cs" />
     <Compile Include="Assets\Scripts\Interfaces\INoble.cs" />
+    <Compile Include="Assets\Scripts\TurnRepeater.cs" />
     <Compile Include="Assets\Scripts\Classes\Resource.cs" />
     <Compile Include="Assets\Scripts\Classes\Peasants.cs" />
     <Compile Include="Assets\Scripts\Data\DataKeeper.cs" />
@@ -81,7 +82,7 @@
     <Compile Include="Assets\Scripts\EnumCityClasses.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IServiceman.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IConsumer.cs" />
-    <Compile Include="Assets\Scripts\TurnRepeater.cs" />
+    <Compile Include="Assets\Scripts\Classes\Strat.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
