@@ -378,6 +378,7 @@
 "Assets/Scripts/Interfaces/IWorker.cs"
 "Assets/Scripts/ScriptableObject/ResourceList.cs"
 "Assets/Scripts/StratPlanningModule.cs"
+"Assets/Scripts/TurnRepeater.cs"
 -langversion:9.0
 
 /deterministic

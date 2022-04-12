@@ -9,6 +9,8 @@ public class Peasants : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller, IProd
 {
     public ISettlement Settlement;
 
+    public TurnRepeater TurnRepeater;
+
     public Warehouse Warehouse;
     public StratPlanningModule PlanningModule;
     public Market Market;
@@ -73,6 +75,14 @@ public class Peasants : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller, IProd
 
     public Action<float> HappyUpdate;
     public Action<float> HealthUpdate;
+    private void Awake()
+    {
+        SubsribeStrat();
+        SubsribeSeller();
+        SubsribeProducer();
+        SubsribeConsumer();
+        SubsribeBuyer();
+    }
 
     public void InitNeeds()
     {
@@ -100,6 +110,10 @@ public class Peasants : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller, IProd
     public void Initialization()
     {
         StarvedPopulation = 0;
+    }
+    public void SubsribeStrat()
+    {
+        TurnRepeater.SubsribeStrat(this);
     }
 
 
@@ -204,8 +218,13 @@ public class Peasants : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller, IProd
             productivityRate -= amount;
         }
     }
-#endregion IStrat
-#region IConsumer
+    #endregion IStrat
+    #region IConsumer
+    public void SubsribeConsumer()
+    {
+        TurnRepeater.SubsribeConsumer(this);
+    }
+
     public void ConsumeFood(double amount)
     {
         var consumableResource = EnumResource.ResourceName.Food;
@@ -256,8 +275,12 @@ public class Peasants : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller, IProd
         }
     }
 
-#endregion IConsumer
-#region IProducer
+    #endregion IConsumer
+    #region IProducer
+    public void SubsribeProducer()
+    {
+        TurnRepeater.SubsribeProducer(this);
+    }
     public Resource GetProductionResource()
     {
         return ProductionResource;
@@ -299,8 +322,12 @@ public class Peasants : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller, IProd
             return Population;
     }
 
-#endregion IProducer
-#region ISeller
+    #endregion IProducer
+    #region ISeller
+    public void SubsribeSeller()
+    {
+        TurnRepeater.SubsribeSeller(this);
+    }
     [Button]
     public void SellGood(EnumResource.ResourceName resourceName, double amount)
     {
@@ -310,8 +337,12 @@ public class Peasants : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller, IProd
         Gold += profit;
         Debug.Log(amount + " " + resourceName + "was sold by " + profit);
     }
-#endregion ISeller
-#region IByuer
+    #endregion ISeller
+    #region IByuer
+    public void SubsribeBuyer()
+    {
+        TurnRepeater.SubsribeBuyer(this);
+    }
     public void BuyResource(Resource resource, double amount)
     {
         var price = Market.CalculateBuyPrice(resource.Name, amount);

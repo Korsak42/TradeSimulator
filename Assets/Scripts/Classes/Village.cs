@@ -132,4 +132,6 @@ public class Village : MonoBehaviour, ISettlement
         CityParts[EnumCityStructure.FreeLandmass] -= amount;
     }
 
+    
+
 }

@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\EnumCityClasses.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IServiceman.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IConsumer.cs" />
+    <Compile Include="Assets\Scripts\TurnRepeater.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

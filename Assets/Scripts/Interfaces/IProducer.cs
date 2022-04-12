@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface IProducer
 {
+    void SubsribeProducer();
     double CalculateProducedResource();
     Resource GetProductionResource();
     void Produce();

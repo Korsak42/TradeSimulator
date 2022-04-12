@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface IStrat
 {
+    void SubsribeStrat();
     double GetPopulation();
     double GetGold();
     void ChangePopulation(float _population);
