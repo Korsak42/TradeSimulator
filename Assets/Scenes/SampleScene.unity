@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 22931612}
+  - component: {fileID: 22931617}
   - component: {fileID: 22931616}
   - component: {fileID: 22931611}
   - component: {fileID: 22931614}
@@ -183,7 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b529fdcf6d7aa44ba55a68e8e52be29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Resources: []
 --- !u!114 &22931614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,14 +200,8 @@ MonoBehaviour:
   Warehouse: {fileID: 22931613}
   PlanningModule: {fileID: 22931611}
   Market: {fileID: 739261426}
-  Needs: []
   ConsumeRate: 0
   ProductivityRate: 0
-  ProductionResource:
-    Name: 0
-    Amount: 0
-    Price: 0
-    Priority: 0
   StarvedPopulation: 0
   DaysStarved: 0
 --- !u!114 &22931615
@@ -237,6 +231,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Strats: []
+--- !u!114 &22931617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22931610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc814db843ac0504a951412037f2680b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &176946616
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b529fdcf6d7aa44ba55a68e8e52be29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Resources: []
 --- !u!114 &739261426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,6 +510,148 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1371548696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1371548698}
+  - component: {fileID: 1371548697}
+  m_Layer: 0
+  m_Name: GlobalData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1371548697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371548696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b470e45965cd7bb46ad57b740645e355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 22931615}
+    - {fileID: 739261426}
+    - {fileID: 22931614}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Settlements
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[ISettlement, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Markets
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[IMarket, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Strats
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[IStrat, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Producers
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[IProducer, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Servicemen
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[IServiceman, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Nobles
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[INoble, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+--- !u!4 &1371548698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371548696}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1787785917
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,4 +714,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinFloatStep: 0.01
   MaxFloatStep: 0.1
+  BirthRateMin: 0.01
+  BirthRateMax: 0.25
   RestockDivider: 4

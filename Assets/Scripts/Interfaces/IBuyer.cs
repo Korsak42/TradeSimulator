@@ -6,5 +6,5 @@ public interface IBuyer
 {
     void SubsribeBuyer();
     void BuyResource(Resource resource, double amount);
-    void MakePurchase(EnumResource.ResourceName resourceName, double amount);
+    void MakePurchase(Resource resource, double amount);
 }

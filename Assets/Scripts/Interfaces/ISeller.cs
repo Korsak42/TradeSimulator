@@ -5,5 +5,5 @@ using UnityEngine;
 public interface ISeller
 {
     void SubsribeSeller();
-    void SellGood(EnumResource.ResourceName resourceName, double amount);
+    void SellGood(Resource resource, double amount);
 }

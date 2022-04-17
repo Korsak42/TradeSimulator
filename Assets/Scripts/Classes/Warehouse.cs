@@ -1,67 +1,83 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using Sirenix.OdinInspector;
+[ShowOdinSerializedPropertiesInInspector]
 
 public class Warehouse : MonoBehaviour, IWarehouse
 {
-    [SerializeField]
-    private List<Resource> Resources = new List<Resource>();
-
-
+    public Dictionary<Resource, double> Resources = new();
+    [Button]
     public void TestInit()
     {
-        Resources = DataKeeper.instance.GetListOfResources();
-        foreach (Resource res in Resources)
+        var ResourceList = DataKeeper.instance.GetListOfResources();
+        foreach (Resource res in ResourceList)
         {
-            res.Amount = Random.Range(100, 1000);
+            CreateNewInstance(res, Random.Range(100, 1000));
         }
     }
 
-    public void CreateNewInstance(EnumResource.ResourceName resourceName, double amount)
+    public void CreateNewInstance(Resource resource, double amount)
     {
-        Resources.Add(DataKeeper.instance.GetResourceList().DeepCopy(resourceName, amount));
+        Resources.Add(ResourceFactory.CreateResource(resource.Name), amount);
     }
 
-    public void RemoveResourceInstance(EnumResource.ResourceName resourceName)
+    public void RemoveResourceInstance(Resource resource)
     {
-        Resources.Remove(FindResource(resourceName));
+        Resources.Remove(FindResource(resource));
     }
 
-    public Resource FindResource(EnumResource.ResourceName resourceName)
+    public Resource FindResource(Resource resource)
     {
-        Resource res = new Resource();
-        foreach (Resource r in Resources)
-        {
-            if (r.Name == resourceName)
-                res = r;
-        }
-        return res;
+        return Resources.FirstOrDefault(x => x.Key == resource).Key;
     }
-
-    public double GetAmount(EnumResource.ResourceName resourceName)
+    [Button]
+    public double GetAmount(Resource resource)
     {
-        return FindResource(resourceName).Amount;
-    }
-
-    public void ChangeAmount(EnumResource.ResourceName resourceName, double amount, bool isPositive)
-    {
-        var res = FindResource(resourceName);
-        if (isPositive)
-            res.Amount += amount;
+        if (IsWarehouseHasThisValue(resource))
+            return Resources[FindResource(resource)];
         else
-            res.Amount -= amount;
+            return -1;
     }
 
-    public bool CheckResourceOnWarehouseAmountMoreThan(EnumResource.ResourceName resourceName, double amount)
+    public bool IsWarehouseHasThisValue(Resource resource)
     {
-        if (FindResource(resourceName).Amount >= amount)
+        foreach (KeyValuePair<Resource, double> res in Resources)
+        {
+            if (Equals(res.Key, resource))
+                return true;
+        }
+        return false;
+    }
+
+    public void ChangeAmount(Resource resource, double amount)
+    {
+        if (IsWarehouseHasThisValue(resource))
+        {
+            Resources[FindResource(resource)] += amount;
+        }
+        else
+        {
+            if (amount > 0)
+                CreateNewInstance(resource, amount);
+            else
+                throw new System.Exception($"Somebody trying to subtract from unexisted Resource {resource.Name}");
+        }
+    }
+
+    public bool CheckResourceOnWarehouseAmountMoreThan(Resource resource, double amount)
+    {
+        if (Resources[FindResource(resource)] >= amount)
             return true;
         else
             return false;
     }
 
-    public List<Resource> GetWarehouse()
+    [Button]
+    public double Test()
     {
-        return Resources;
+        var resource1 = ResourceFactory.CreateResource(EnumResource.ResourceName.Tools);
+        return GetAmount(resource1);
     }
 }

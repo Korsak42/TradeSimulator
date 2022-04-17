@@ -12,6 +12,8 @@ public class EnumResource
         Cloth,
         Wine,
         Beer,
+        BuildingsMaterial,
+        RawMaterial,
         Leavings,
     }
 }

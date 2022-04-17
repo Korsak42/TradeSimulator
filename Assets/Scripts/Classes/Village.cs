@@ -46,15 +46,20 @@ public class Village : MonoBehaviour, ISettlement
     
     public Dictionary<EnumCityStructure, int> CityParts = new Dictionary<EnumCityStructure, int>();
 
+    public Action<float> InfrastructureUpdate;
     public Action<float> PietyUpdate;
     public Action<float> CrimeRateUpdate;
-    public Action<float> InfrastructureUpdate;
+
 
     public void GlobalInit()
     {
         SetCityStructure();
     }
 
+    public float GetInfrastucture()
+    {
+        return infrastructure;
+    }
     public float GetPiety()
     {
         return piety;
@@ -65,25 +70,55 @@ public class Village : MonoBehaviour, ISettlement
         return crimeRate;
     }
 
-    public float GetInfrastucture()
-    {
-        return infrastructure;
-    }
 
-    public void ChangeHealth(float _piety)
-    {
-        Piety = _piety;
-    }
 
-    public void ChangeHappy(float _crimeRate)
-    {
-        CrimeRate = _crimeRate;
-    }
     public void ChangeInfrastructure(float _infrastructure)
     {
         Infrastructure = _infrastructure;
     }
 
+    public void ChangeInfrastructure(float amount, bool isPositive)
+    {
+        if (isPositive)
+            Infrastructure += amount;
+        else
+            Infrastructure -= amount;
+    }
+
+    public void ChangePiety(float _piety)
+    {
+        Piety = _piety;
+    }
+
+    public void ChangePiety(float amount, bool isPositive)
+    {
+        if (isPositive)
+            Piety += amount;
+        else
+            Piety -= amount;
+    }
+
+    public void ChangeCrimeRate(float _crimeRate)
+    {
+        CrimeRate = _crimeRate;
+    }
+    public void ChangeCrimeRate(float amount, bool isPositive)
+    {
+        if (isPositive)
+            CrimeRate += amount;
+        else
+            CrimeRate -= amount;
+    }
+
+    public int GetFreeArea()
+    {
+        return CityParts[EnumCityStructure.FreeLandmass];
+    }
+
+    public int GetDefenseArea()
+    {
+        return CityParts[EnumCityStructure.DefenseArea];
+    }
     public int GetWorkArea()
     {
         return CityParts[EnumCityStructure.WorkArea];
@@ -132,6 +167,13 @@ public class Village : MonoBehaviour, ISettlement
         CityParts[EnumCityStructure.FreeLandmass] -= amount;
     }
 
-    
+    public void ChangeHappy(float _crimeRate)
+    {
+        throw new NotImplementedException();
+    }
 
+    public void ChangeHealth(float _piety)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -12,28 +12,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8113eaa705f2d49498ad0abc7b5c509f, type: 3}
   m_Name: ResourceList
   m_EditorClassIdentifier: 
-  Resources:
-  - Name: 0
-    Amount: 1
-    Price: 1
-    Priority: 1
-  - Name: 1
-    Amount: 1
-    Price: 2
-    Priority: 2
-  - Name: 2
-    Amount: 1
-    Price: 3
-    Priority: 5
-  - Name: 3
-    Amount: 1
-    Price: 4
-    Priority: 3
-  - Name: 4
-    Amount: 1
-    Price: 5
-    Priority: 6
-  - Name: 5
-    Amount: 1
-    Price: 1.5
-    Priority: 4
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Resources
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[ResourceData, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 1|ResourceData, Assembly-CSharp
+    - Name: Name
+      Entry: 3
+      Data: 0
+    - Name: BasePrice
+      Entry: 4
+      Data: 1
+    - Name: BaseAmount
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|ResourceData, Assembly-CSharp
+    - Name: Name
+      Entry: 3
+      Data: 1
+    - Name: BasePrice
+      Entry: 4
+      Data: 2
+    - Name: BaseAmount
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

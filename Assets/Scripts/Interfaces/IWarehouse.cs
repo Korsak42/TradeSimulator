@@ -5,11 +5,10 @@ using UnityEngine;
 public interface IWarehouse
 {
     public void TestInit();
-    void CreateNewInstance(EnumResource.ResourceName resourceName, double amount);
-    void RemoveResourceInstance(EnumResource.ResourceName resourceName);
-    double GetAmount(EnumResource.ResourceName resourceName);
-    void ChangeAmount(EnumResource.ResourceName resourceName, double amount, bool isPositive);
-    Resource FindResource(EnumResource.ResourceName resourceName);
-    bool CheckResourceOnWarehouseAmountMoreThan(EnumResource.ResourceName resourceName, double amount);
-    List<Resource> GetWarehouse();
+    void CreateNewInstance(Resource resource, double amount);
+    void RemoveResourceInstance(Resource resource);
+    double GetAmount(Resource resource);
+    void ChangeAmount(Resource resource, double amount);
+    Resource FindResource(Resource resource);
+    bool CheckResourceOnWarehouseAmountMoreThan(Resource resource, double amount);
 }

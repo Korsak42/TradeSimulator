@@ -4,8 +4,7 @@ using UnityEngine;
 
 public interface IMarket
 {
-    void BuyResource(Resource resource, double gold);
-    
+    void GlobalInit();    
     float CalculatePrice(Resource resource, double needsAmount, double warehouseAmount);
     float CalculatePrice(Resource resource, double amount);
 }

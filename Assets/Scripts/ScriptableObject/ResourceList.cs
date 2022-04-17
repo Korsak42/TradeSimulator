@@ -1,59 +1,34 @@
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/ResourseList", order = 1)]
-public class ResourceList : ScriptableObject
+public class ResourceList : SerializedScriptableObject
 {
-    [SerializeField]
-    public List<Resource> Resources;
+    
+    public List<ResourceData> Resources;
 
-    public float GetDefaultPrice(EnumResource.ResourceName name)
+    public float GetDefaultPrice(EnumResource.ResourceName resourceName)
     {
-        return FindResource(name).Price;
+        return FindResource(resourceName).BasePrice;
     }
 
-    public double GetDefaultAmount(EnumResource.ResourceName name)
+    public float GetDefaultAmount(EnumResource.ResourceName resourceName)
     {
-        return FindResource(name).Amount;
+        return FindResource(resourceName).BaseAmount;
     }
 
-    public int GetDefaultPriority(EnumResource.ResourceName name)
+    public ResourceData FindResource(EnumResource.ResourceName resourceName)
     {
-        return FindResource(name).Priority;
-    }
-
-    public Resource FindResource(EnumResource.ResourceName name)
-    {
-        var returnRes = Resources.Where(x => x.Name == name).FirstOrDefault();
+        var returnRes = Resources.Where(x => x.Name == resourceName).FirstOrDefault();
         if (returnRes == null)
             Debug.Log("Didn't find: " + name);
         return returnRes;
     }
-    public Resource DeepCopy(Resource resource)
-    {
-        Resource res = new Resource(resource.Name, resource.Amount, resource.Price, resource.Priority);
-        return res;
-    }
 
-    public Resource DeepCopy(EnumResource.ResourceName name, double amount)
-    {
-        Resource res = new Resource(name, amount, GetDefaultPrice(name), GetDefaultPriority(name));
-        return res;
-    }
 
-    public List<Resource> DeepCopyList()
-    {
-        List<Resource> returnList = new List<Resource>();
-        foreach (Resource r in Resources)
-        {
-            returnList.Add(DeepCopy(r));
-        }
-
-        return returnList;
-    }
-
-    public Resource GetRandomResource()
+    public ResourceData GetRandomResource()
     {
         int r = Random.Range(0, Resources.Count - 1);
         return Resources[r];

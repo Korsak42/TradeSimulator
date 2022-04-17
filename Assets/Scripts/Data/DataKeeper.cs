@@ -10,6 +10,7 @@ public class DataKeeper : MonoBehaviour
     public Constants Constants;
     public CityStructureData CityStructureData;
 
+
     private void Awake()
     {
         instance = this;
@@ -22,10 +23,20 @@ public class DataKeeper : MonoBehaviour
 
     public List<Resource> GetListOfResources()
     {
-        return ResourceList.DeepCopyList();
+        var resourceDatas = new List<ResourceData>(ResourceList.Resources);
+        List<Resource> returnList = new();
+        foreach (ResourceData rd in resourceDatas)
+        {
+            returnList.Add(ResourceFactory.CreateResource(rd.Name));
+        }
+        return returnList;
     }
 
     public float GetDefaultPrice(EnumResource.ResourceName resourceName)
+    {
+        return ResourceList.GetDefaultPrice(resourceName);
+    }
+    public float GetDefaultAmount(EnumResource.ResourceName resourceName)
     {
         return ResourceList.GetDefaultPrice(resourceName);
     }

@@ -14,7 +14,6 @@ public interface IStrat
     void GlobalInit();
     void ChangeGold(double amount, bool isPositive);
     void ChangePopulation(double amount, bool isPositive);
-    void Initialization();
     Warehouse GetWarehouse();
     Market GetMarket();
     void ChangeHealth(float amount, bool isPositive);

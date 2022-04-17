@@ -9,4 +9,5 @@ public interface IProducer
     Resource GetProductionResource();
     void Produce();
     void SetProductionResource();
+    void ProducerGlobalInit();
 }

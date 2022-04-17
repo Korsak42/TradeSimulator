@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Interfaces\IMarket.cs" />
     <Compile Include="Assets\Scripts\EnumResource.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IStrat.cs" />
+    <Compile Include="Assets\Scripts\Classes\Strats\ProduceStrat.cs" />
     <Compile Include="Assets\Scripts\Classes\Warehouse.cs" />
     <Compile Include="Assets\Scripts\Classes\Market.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ISettlement.cs" />
@@ -70,19 +71,33 @@
     <Compile Include="Assets\Scripts\Classes\Village.cs" />
     <Compile Include="Assets\Scripts\Data\Constants.cs" />
     <Compile Include="Assets\Scripts\Interfaces\INoble.cs" />
-    <Compile Include="Assets\Scripts\TurnRepeater.cs" />
-    <Compile Include="Assets\Scripts\Classes\Resource.cs" />
-    <Compile Include="Assets\Scripts\Classes\Peasants.cs" />
+    <Compile Include="Assets\Scripts\Modules\TurnRepeater.cs" />
+    <Compile Include="Assets\Scripts\Classes\Resources\Resource.cs" />
+    <Compile Include="Assets\Scripts\Classes\Strats\Peasants.cs" />
     <Compile Include="Assets\Scripts\Data\DataKeeper.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IBuyer.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ISeller.cs" />
+    <Compile Include="Assets\Scripts\Classes\Strats\Strat.cs" />
     <Compile Include="Assets\Scripts\EnumCityStructure.cs" />
+    <Compile Include="Assets\Scripts\Modules\PopulationModifier.cs" />
+    <Compile Include="Assets\Scripts\Classes\Strats\Soldiers.cs" />
     <Compile Include="Assets\Scripts\ScriptableObject\ResourceList.cs" />
+    <Compile Include="Assets\Scripts\Classes\Resources\ToolResource.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IWorker.cs" />
+    <Compile Include="Assets\Scripts\Classes\Resources\FoodResource.cs" />
     <Compile Include="Assets\Scripts\EnumCityClasses.cs" />
+    <Compile Include="Assets\Scripts\ResourceFactory.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IServiceman.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IConsumer.cs" />
-    <Compile Include="Assets\Scripts\Classes\Strat.cs" />
+    <Compile Include="Assets\Scripts\Data\ResourceData.cs" />
+    <Compile Include="Assets\InitializationModule.cs" />
+    <Compile Include="Assets\Scripts\Classes\Strats\Serviceman.cs" />
+    <Compile Include="Assets\Scripts\Classes\Resources\LeavingsResource.cs" />
+    <Compile Include="Assets\Scripts\Classes\Resources\BeerResource.cs" />
+    <Compile Include="Assets\Scripts\Classes\Resources\BuildingMaterialsResource.cs" />
+    <Compile Include="Assets\Scripts\Classes\Resources\RawMaterialsResource.cs" />
+    <Compile Include="Assets\Scripts\Classes\Resources\WeaponResource.cs" />
+    <Compile Include="Assets\Scripts\Classes\Resources\ClothResource.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
