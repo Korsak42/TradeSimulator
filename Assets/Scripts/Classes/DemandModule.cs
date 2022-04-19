@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
@@ -9,6 +8,8 @@ public class DemandModule : MonoBehaviour
 
     public Dictionary<Resource, double> demands = new();
 
+    public double CurrentTurnGoldSpend;
+    [Button]
     public void GlobalInit(Strat strat)
     {
         Strat = strat;
@@ -17,5 +18,17 @@ public class DemandModule : MonoBehaviour
         {
             demands.Add(resource, resource.GetAmountToConsume(Strat));
         }
+    }
+    [Button]
+    public int CalculateReserveDivider(double amountOnWarehouse, double amountDemands)
+    {
+        for (int i = 10; i > 0; i--)
+        {
+            if (amountOnWarehouse / (amountDemands * i) > 1)
+                return i;
+            else
+                i--;
+        }
+        return 1;
     }
 }

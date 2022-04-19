@@ -1,11 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using System;
 using System.Linq;
 using Sirenix.OdinInspector;
-using Sirenix.Serialization;
 [ShowOdinSerializedPropertiesInInspector]
 public class Village : MonoBehaviour, ISettlement
 {

@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Strat: {fileID: 0}
+  CurrentTurnGoldSpend: 0
 --- !u!1 &176946616
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Strat: {fileID: 579474295}
+  CurrentTurnGoldSpend: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cityClass: 0
-  CityLandmass: 0
+  CityLandmass: 1000
 --- !u!4 &1115348080
 Transform:
   m_ObjectHideFlags: 0
@@ -755,6 +757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1371548698}
   - component: {fileID: 1371548697}
+  - component: {fileID: 1371548699}
   m_Layer: 0
   m_Name: GlobalData
   m_TagString: Untagged
@@ -769,7 +772,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371548696}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b470e45965cd7bb46ad57b740645e355, type: 3}
   m_Name: 
@@ -872,6 +875,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1371548699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371548696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c95b0e563d01af94689f69df5fbb2c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1787785917
 GameObject:
   m_ObjectHideFlags: 0

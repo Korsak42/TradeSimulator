@@ -81,6 +81,7 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
     {
         GlobalLinkStrat();   
     }
+    [Button]
     public void GlobalLinkStrat()
     {
         GlobalLink.instance.TurnRepeaterLink(this);
@@ -93,9 +94,9 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
 
     private void SubsribeStratToInitialization()
     {
-        InitializationModule.instance.SubscribeStrat(this);
+        //InitializationModule.instance.SubscribeStrat(this);
     }
-
+    [Button]
     public void GlobalInit()
     {
         StratType = EnumStrats.Peasants;
@@ -226,6 +227,7 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
         TurnRepeater.SubsribeConsumer(this);
     }
 
+    [Button]
     public void ConsumeCycle()
     {
         foreach (KeyValuePair<Resource, double> pair in DemandModule.demands)
@@ -247,11 +249,17 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
     {
         TurnRepeater.SubsribeSeller(this);
     }
-    [Button]
+
+
+
     public void SellGood(Resource resource, double amount)
     {
+        if (amount < 0)
+        {
+            throw new ArgumentException($"You are trying to sell negative amount of {resource.Name} ");
+        }
         var profit = Market.CalculateSellPrice(resource, amount) * amount;
-        Warehouse.ChangeAmount(resource, amount);
+        Warehouse.ChangeAmount(resource, -amount);
         Market.Warehouse.ChangeAmount(resource, amount);
         Gold += profit;
         Debug.Log(amount + " " + resource.Name + "was sold by " + profit);
@@ -285,20 +293,32 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
     {
         if (Market.Warehouse.CheckResourceOnWarehouseAmountMoreThan(resource, amount))
         {
-            Market.Warehouse.ChangeAmount(resource, amount);
+            var totalCost = Market.CalculateBuyPrice(resource, amount) * amount;
+            Market.Warehouse.ChangeAmount(resource, -amount);
             Warehouse.ChangeAmount(resource, amount);
-            ChangeGold(Market.CalculateBuyPrice(resource, amount) * amount, false);
+            ChangeGold(totalCost, false);
+            Debug.Log(resource.Name + " was bought in amount of " + amount + ". Total cost:" + totalCost);
         }
         else
         {
             var newAmount = Market.Warehouse.GetAmount(resource);
-            Market.Warehouse.ChangeAmount(resource, newAmount);
+            var totalCost = Market.CalculateBuyPrice(resource, newAmount) * amount;
+            Market.Warehouse.ChangeAmount(resource, -newAmount);
             Warehouse.ChangeAmount(resource, newAmount);
-            ChangeGold(Market.CalculateBuyPrice(resource, newAmount) * newAmount, false);
+            ChangeGold(totalCost, false);
+            Debug.Log(resource.Name + " was bought in amount of " + newAmount + ". Total cost:" + totalCost);
+        }
+    }
+    [Button]
+    public void RestockReserves()
+    {
+        foreach (KeyValuePair<Resource, double> pair in DemandModule.demands)
+        {
+            Restock(pair.Key, pair.Value);
         }
     }
 
-    public void Restock(Resource resource)
+    public void Restock(Resource resource, double amount)
     {
         var restockAmount = Population / DataKeeper.instance.Constants.RestockDivider;
         MakePurchase(resource, restockAmount);

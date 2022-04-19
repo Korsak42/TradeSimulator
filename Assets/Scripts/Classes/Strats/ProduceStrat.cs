@@ -1,11 +1,18 @@
 using Sirenix.OdinInspector;
+using System;
 public class ProduceStrat : Strat, IProducer
 {
     public Resource ProductionResource;
+    [Button]
     public void ProducerGlobalInit()
     {
         SetProductionResource();
         SubsribeProducer();
+    }
+    [Button]
+    public void ProduceCycle()
+    {
+        Produce();
     }
 
     [Button]
@@ -32,11 +39,26 @@ public class ProduceStrat : Strat, IProducer
     [Button]
     public void SetProductionResource()
     {
-        ProductionResource = ResourceFactory.CreateResource(EnumResource.ResourceName.Tools);
+        ProductionResource = ResourceFactory.CreateResource(EnumResource.ResourceName.Food);
     }
 
     public void SubsribeProducer()
     {
         TurnRepeater.SubsribeProducer(this);
+    }
+    [Button]
+    public void SellProductedResource()
+    {
+        if (DemandModule.demands.ContainsKey(ProductionResource))
+        {
+            var amountOfDemands = DemandModule.demands[ProductionResource];
+            var divider = DemandModule.CalculateReserveDivider(Warehouse.GetAmount(ProductionResource), amountOfDemands);
+            var amountToSold = Math.Min(amountOfDemands * divider, Warehouse.GetAmount(ProductionResource));
+            SellGood(ProductionResource, amountToSold);
+        }
+        else
+        {
+            SellGood(ProductionResource, Warehouse.GetAmount(ProductionResource));
+        }
     }
 }
