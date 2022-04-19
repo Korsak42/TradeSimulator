@@ -27,7 +27,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 9
     - Name: 
       Entry: 7
       Data: 1|ResourceData, Assembly-CSharp
@@ -51,7 +51,112 @@ MonoBehaviour:
       Data: 1
     - Name: BasePrice
       Entry: 4
+      Data: 4
+    - Name: BaseAmount
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|ResourceData, Assembly-CSharp
+    - Name: Name
+      Entry: 3
       Data: 2
+    - Name: BasePrice
+      Entry: 4
+      Data: 5
+    - Name: BaseAmount
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|ResourceData, Assembly-CSharp
+    - Name: Name
+      Entry: 3
+      Data: 3
+    - Name: BasePrice
+      Entry: 4
+      Data: 7
+    - Name: BaseAmount
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|ResourceData, Assembly-CSharp
+    - Name: Name
+      Entry: 3
+      Data: 4
+    - Name: BasePrice
+      Entry: 4
+      Data: 5
+    - Name: BaseAmount
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|ResourceData, Assembly-CSharp
+    - Name: Name
+      Entry: 3
+      Data: 5
+    - Name: BasePrice
+      Entry: 4
+      Data: 3
+    - Name: BaseAmount
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|ResourceData, Assembly-CSharp
+    - Name: Name
+      Entry: 3
+      Data: 6
+    - Name: BasePrice
+      Entry: 4
+      Data: 10
+    - Name: BaseAmount
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|ResourceData, Assembly-CSharp
+    - Name: Name
+      Entry: 3
+      Data: 7
+    - Name: BasePrice
+      Entry: 4
+      Data: 2
+    - Name: BaseAmount
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|ResourceData, Assembly-CSharp
+    - Name: Name
+      Entry: 3
+      Data: 8
+    - Name: BasePrice
+      Entry: 4
+      Data: 0.1
     - Name: BaseAmount
       Entry: 4
       Data: 1

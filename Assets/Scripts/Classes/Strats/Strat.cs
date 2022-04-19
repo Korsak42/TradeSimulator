@@ -1,4 +1,4 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -7,12 +7,15 @@ using Sirenix.OdinInspector;
 [ShowOdinSerializedPropertiesInInspector]
 public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
 {
+    public EnumStrats StratType;
+
     public ISettlement Settlement;
 
     public TurnRepeater TurnRepeater;
 
     public Warehouse Warehouse;
     public StratPlanningModule PlanningModule;
+    public DemandModule DemandModule;
     public Market Market;
 
     public List<Resource> Needs;
@@ -74,22 +77,48 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
 
     public Action<float> HappyUpdate;
     public Action<float> HealthUpdate;
+    private void Start()
+    {
+        GlobalLinkStrat();   
+    }
+    public void GlobalLinkStrat()
+    {
+        GlobalLink.instance.TurnRepeaterLink(this);
+        Settlement = GetComponentInParent<ISettlement>();
+        Warehouse = GetComponent<Warehouse>();
+        DemandModule = GetComponent<DemandModule>();
+        SubsribeStrat();
+        SubsribeStratToInitialization();
+    }
+
+    private void SubsribeStratToInitialization()
+    {
+        InitializationModule.instance.SubscribeStrat(this);
+    }
 
     public void GlobalInit()
     {
+        StratType = EnumStrats.Peasants;
+        GlobalLinkStrat();
         Settlement = GetComponent<ISettlement>();
         ChangeHealth(1f, true);
         ChangeHappy(1f, true);
         ChangeProductivityRate(1f, true);
+        ChangeConsumeRate(1f, true);
         ChangeGold(UnityEngine.Random.Range(100, 1000));
         Population = 350;
         Warehouse.TestInit();
-        SubsribeStrat();
+        
+        DemandModule.GlobalInit(this);
     }
 
     public void SubsribeStrat()
     {
         TurnRepeater.SubsribeStrat(this);
+    }
+    public EnumStrats GetStratType()
+    {
+        return StratType;
     }
 
     public double GetPopulation()
@@ -136,8 +165,6 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
         else
             Happy -= amount;
     }
-
-
 
     public void ChangeGold(double amount, bool isPositive)
     {
@@ -194,11 +221,18 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
         }
     }
 
-    void IConsumer.SubsribeConsumer()
+    public void SubsribeConsumer()
     {
-        throw new NotImplementedException();
+        TurnRepeater.SubsribeConsumer(this);
     }
 
+    public void ConsumeCycle()
+    {
+        foreach (KeyValuePair<Resource, double> pair in DemandModule.demands)
+        {
+            Consume(pair.Key);
+        }
+    }
     public void Consume(Resource resource)
     {
         var amountToConsume = resource.GetAmountToConsume(this);
@@ -206,6 +240,7 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
         var amountConsumed = Math.Min(amountToConsume, availiableResourceOnWarehouse);
         Warehouse.ChangeAmount(resource, -amountConsumed);
         resource.ConsumeBy(this, amountToConsume, amountConsumed);
+        Debug.Log(StratType + "consumed " + amountConsumed + " of " + resource.Name);
     }
 
     public void SubsribeSeller()

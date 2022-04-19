@@ -7,6 +7,7 @@ using System.Linq;
 
 public class Peasants : ProduceStrat, IBuyer, ISeller
 {
+
     [Button]
     public Resource GetResourceFromNeeds(EnumResource.ResourceName resourceName)
     {

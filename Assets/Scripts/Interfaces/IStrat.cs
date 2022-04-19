@@ -5,6 +5,7 @@ using UnityEngine;
 public interface IStrat
 {
     void SubsribeStrat();
+    EnumStrats GetStratType();
     double GetPopulation();
     double GetGold();
     void ChangePopulation(float _population);

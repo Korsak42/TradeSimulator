@@ -9,6 +9,7 @@ public class DataKeeper : MonoBehaviour
     private ResourceList ResourceList;
     public Constants Constants;
     public CityStructureData CityStructureData;
+    public DemandsList DemandsList;
 
 
     private void Awake()

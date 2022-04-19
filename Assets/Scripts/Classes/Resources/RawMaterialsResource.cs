@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RawMaterialsResource : MonoBehaviour
+public class RawMaterialsResource : Resource
 {
-    // Start is called before the first frame update
-    void Start()
+    public RawMaterialsResource()
     {
-        
+        Name = EnumResource.ResourceName.RawMaterial;
+        BasePrice = DataKeeper.instance.GetDefaultAmount(EnumResource.ResourceName.RawMaterial);
+        BaseAmount = DataKeeper.instance.GetDefaultPrice(EnumResource.ResourceName.RawMaterial);
+    }
+    public override void ConsumeBy(Strat consumer, double amountNeeded, double amountConsumed)
+    {
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override double GetAmountToConsume(Strat consumer)
     {
-        
+        throw new System.NotImplementedException();
     }
 }

@@ -5,12 +5,19 @@ using Sirenix.OdinInspector;
 
 public class InitializationModule : SerializedMonoBehaviour
 {
+    public static InitializationModule instance;
+
     public List<ISettlement> Settlements = new();
     public List<IMarket> Markets = new();
     public List<IStrat> Strats = new();
     public List<IProducer> Producers = new();
     public List<IServiceman> Servicemen = new();
     public List<INoble> Nobles = new();
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -68,5 +75,10 @@ public class InitializationModule : SerializedMonoBehaviour
         {
 
         }
+    }
+
+    public void SubscribeStrat(Strat strat)
+    {
+        Strats.Add(strat);
     }
 }

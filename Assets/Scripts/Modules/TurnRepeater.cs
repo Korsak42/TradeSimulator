@@ -43,8 +43,20 @@ public class TurnRepeater : MonoBehaviour
     {
         Noble = strat;
     }
+    [Button]
     public void TurnCycle()
     {
+        ConsumeCycle();
+    }
 
+    public void ConsumeCycle()
+    {
+        foreach (Strat strat in Strats)
+        {
+            if (strat.GetPopulation() > 1)
+            {
+                strat.ConsumeCycle();
+            }
+        }
     }
 }

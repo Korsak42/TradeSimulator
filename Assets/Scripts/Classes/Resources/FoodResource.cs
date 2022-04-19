@@ -1,4 +1,3 @@
-
 public class FoodResource : Resource
 {
     public FoodResource()
@@ -27,6 +26,9 @@ public class FoodResource : Resource
 
     public override double GetAmountToConsume(Strat consumer)
     {
-        return consumer.GetPopulation() * consumer.GetConsumeRate();
+        var pop = consumer.GetPopulation();
+        var consumerRate = consumer.GetConsumeRate();
+        var returnValue = pop * consumerRate;
+        return returnValue;
     }
 }

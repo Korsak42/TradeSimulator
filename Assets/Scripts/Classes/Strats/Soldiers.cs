@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,18 +7,11 @@ public class Soldiers : Serviceman
     {
         if (GetHappy() > 1)
         {
-            if (amountConsumpted > amountNeeded)
-            {
-                
-            }
-            else
-            {
-                Settlement.ChangeCrimeRate(DataKeeper.instance.Constants.MinFloatStep, false);
-            }
+            Guard();
         }
         else
         {
-
+            Robbery(TurnRepeater.Strats);
         }
     }
 
@@ -28,7 +20,7 @@ public class Soldiers : Serviceman
         Consume(ResourceFactory.CreateResource(EnumResource.ResourceName.Weapon));
     }
 
-    public void Robbery(List<IStrat> strats)
+    public void Robbery(List<Strat> strats)
     {
         double stolenMoney = 0;
         foreach (IStrat strat in strats)

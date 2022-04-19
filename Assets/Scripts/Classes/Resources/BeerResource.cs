@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeerResource : MonoBehaviour
+public class BeerResource : Resource
 {
-    // Start is called before the first frame update
-    void Start()
+    public BeerResource()
     {
-        
+        Name = EnumResource.ResourceName.Beer;
+        BasePrice = DataKeeper.instance.GetDefaultAmount(EnumResource.ResourceName.Beer);
+        BaseAmount = DataKeeper.instance.GetDefaultPrice(EnumResource.ResourceName.Beer);
+    }
+    public override void ConsumeBy(Strat consumer, double amountNeeded, double amountConsumed)
+    {
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override double GetAmountToConsume(Strat consumer)
     {
-        
+        throw new System.NotImplementedException();
     }
 }
