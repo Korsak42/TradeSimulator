@@ -11,15 +11,10 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
 
     public ISettlement Settlement;
 
-    public TurnRepeater TurnRepeater;
-
     public Warehouse Warehouse;
-    public StratPlanningModule PlanningModule;
+
     public DemandModule DemandModule;
     public Market Market;
-
-    public List<Resource> Needs;
-
     
     public float ConsumeRate;
     
@@ -77,18 +72,19 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
 
     public Action<float> HappyUpdate;
     public Action<float> HealthUpdate;
-    private void Start()
-    {
-        GlobalLinkStrat();   
-    }
+
     [Button]
     public void GlobalLinkStrat()
     {
-        GlobalLink.instance.TurnRepeaterLink(this);
         Settlement = GetComponentInParent<ISettlement>();
+        Settlement.SubscribeStrat(this);
         Warehouse = GetComponent<Warehouse>();
         DemandModule = GetComponent<DemandModule>();
+        
         SubsribeStrat();
+        SubsribeBuyer();
+        SubsribeConsumer();
+        SubsribeSeller();
         SubsribeStratToInitialization();
     }
 
@@ -97,11 +93,9 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
         //InitializationModule.instance.SubscribeStrat(this);
     }
     [Button]
-    public void GlobalInit()
+    public virtual void GlobalInit()
     {
-        StratType = EnumStrats.Peasants;
-        GlobalLinkStrat();
-        Settlement = GetComponent<ISettlement>();
+        Market = Settlement.GetMarket();
         ChangeHealth(1f, true);
         ChangeHappy(1f, true);
         ChangeProductivityRate(1f, true);
@@ -109,13 +103,12 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
         ChangeGold(UnityEngine.Random.Range(100, 1000));
         Population = 350;
         Warehouse.TestInit();
-        
         DemandModule.GlobalInit(this);
     }
 
     public void SubsribeStrat()
     {
-        TurnRepeater.SubsribeStrat(this);
+        GlobalData.instance.SubsribeStrat(this);
     }
     public EnumStrats GetStratType()
     {
@@ -224,15 +217,16 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
 
     public void SubsribeConsumer()
     {
-        TurnRepeater.SubsribeConsumer(this);
+        GlobalData.instance.SubsribeConsumer(this);
     }
 
     [Button]
     public void ConsumeCycle()
     {
-        foreach (KeyValuePair<Resource, double> pair in DemandModule.demands)
+        List<Resource> resources = new List<Resource>(DemandModule.demands.Keys);
+        foreach (Resource resource in resources)
         {
-            Consume(pair.Key);
+            Consume(resource);
         }
     }
     public void Consume(Resource resource)
@@ -242,15 +236,15 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
         var amountConsumed = Math.Min(amountToConsume, availiableResourceOnWarehouse);
         Warehouse.ChangeAmount(resource, -amountConsumed);
         resource.ConsumeBy(this, amountToConsume, amountConsumed);
-        Debug.Log(StratType + "consumed " + amountConsumed + " of " + resource.Name);
+        DemandModule.demands[resource] = DemandModule.demands[resource] - amountToConsume;
+        PopulationModifier.instance.PopulationChange(this, amountToConsume, amountConsumed);
+        Debug.Log(StratType + " consumed " + amountConsumed + " of " + resource.Name);
     }
 
     public void SubsribeSeller()
     {
-        TurnRepeater.SubsribeSeller(this);
+        GlobalData.instance.SubsribeSeller(this);
     }
-
-
 
     public void SellGood(Resource resource, double amount)
     {
@@ -267,7 +261,7 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
 
     public void SubsribeBuyer()
     {
-        TurnRepeater.SubsribeBuyer(this);
+        GlobalData.instance.SubsribeBuyer(this);
     }
     public void BuyResource(Resource resource, double amount)
     {
@@ -320,7 +314,7 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
 
     public void Restock(Resource resource, double amount)
     {
-        var restockAmount = Population / DataKeeper.instance.Constants.RestockDivider;
+        var restockAmount = amount;
         MakePurchase(resource, restockAmount);
     }
 }

@@ -2,7 +2,12 @@ using System.Collections.Generic;
 
 public class Bureaucrats : Serviceman
 {
-    public override void ServiceWork(double amountConsumpted, double amountNeeded)
+    public override void GlobalInit()
+    {
+        StratType = EnumStrats.Bureaucrats;
+        base.GlobalInit();
+    }
+    public override void ServiceWork()
     {
         if (GetHappy() > 1)
         {
@@ -10,7 +15,7 @@ public class Bureaucrats : Serviceman
         }
         else
         {
-            Corruption(TurnRepeater.Strats);
+            Corruption(Settlement.GetStrats());
         }
     }
 

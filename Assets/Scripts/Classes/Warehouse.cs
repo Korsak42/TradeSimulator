@@ -17,6 +17,7 @@ public class Warehouse : MonoBehaviour, IWarehouse
         }
     }
 
+
     public void CreateNewInstance(Resource resource, double amount)
     {
         Resources.Add(ResourceFactory.CreateResource(resource.Name), amount);
@@ -29,15 +30,20 @@ public class Warehouse : MonoBehaviour, IWarehouse
 
     public Resource FindResource(Resource resource)
     {
+
         return Resources.FirstOrDefault(x => x.Key == resource).Key;
     }
     [Button]
     public double GetAmount(Resource resource)
     {
         if (IsWarehouseHasThisValue(resource))
+        {
             return Resources[FindResource(resource)];
+        }
         else
+        {
             return -1;
+        }
     }
 
     public bool IsWarehouseHasThisValue(Resource resource)
@@ -74,9 +80,11 @@ public class Warehouse : MonoBehaviour, IWarehouse
     }
 
     [Button]
-    public double Test()
+    public void Test()
     {
-        var resource1 = ResourceFactory.CreateResource(EnumResource.ResourceName.Tools);
-        return GetAmount(resource1);
+        foreach (KeyValuePair<Resource, double> pair in Resources)
+        {
+            Resources[pair.Key] = 100;
+        }
     }
 }

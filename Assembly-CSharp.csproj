@@ -58,25 +58,27 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Data\CityStructureData.cs" />
     <Compile Include="Assets\Scripts\Classes\Resources\ClothResource.cs" />
-    <Compile Include="Assets\Scripts\EnumConsumption.cs" />
+    <Compile Include="Assets\Scripts\EnumS\EnumConsumption.cs" />
     <Compile Include="Assets\Scripts\StratPlanningModule.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IWarehouse.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IMarket.cs" />
-    <Compile Include="Assets\Scripts\EnumResource.cs" />
+    <Compile Include="Assets\Scripts\EnumS\EnumResource.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IStrat.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\Beggars.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\ProduceStrat.cs" />
     <Compile Include="Assets\GlobalLink.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\Artisans.cs" />
     <Compile Include="Assets\Scripts\Classes\Warehouse.cs" />
+    <Compile Include="Assets\Scripts\Classes\Settlement\Settlement.cs" />
     <Compile Include="Assets\Scripts\Classes\Resources\BuildingMaterialsResource.cs" />
-    <Compile Include="Assets\Scripts\Classes\DemandModule.cs" />
+    <Compile Include="Assets\Scripts\Modules\DemandModule.cs" />
+    <Compile Include="Assets\GlobalStarter.cs" />
     <Compile Include="Assets\Scripts\Classes\Market.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\Noble.cs" />
-    <Compile Include="Assets\Scripts\EnumStrats.cs" />
+    <Compile Include="Assets\Scripts\EnumS\EnumStrats.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ISettlement.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IProducer.cs" />
-    <Compile Include="Assets\Scripts\Classes\Village.cs" />
+    <Compile Include="Assets\Scripts\Classes\Settlement\Village.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\Serviceman.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\Bureaucrats.cs" />
     <Compile Include="Assets\Scripts\Data\Constants.cs" />
@@ -89,10 +91,10 @@
     <Compile Include="Assets\Scripts\Data\DataKeeper.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IBuyer.cs" />
     <Compile Include="Assets\Scripts\Data\DemandsList.cs" />
-    <Compile Include="Assets\InitializationModule.cs" />
+    <Compile Include="Assets\InitializationVisitor.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ISeller.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\Strat.cs" />
-    <Compile Include="Assets\Scripts\EnumCityStructure.cs" />
+    <Compile Include="Assets\Scripts\EnumS\EnumCityStructure.cs" />
     <Compile Include="Assets\Scripts\Classes\Resources\RawMaterialsResource.cs" />
     <Compile Include="Assets\Scripts\Modules\PopulationModifier.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\Soldiers.cs" />
@@ -102,13 +104,36 @@
     <Compile Include="Assets\Scripts\Classes\Resources\LeavingsResource.cs" />
     <Compile Include="Assets\Scripts\Data\ResourceData.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IWorker.cs" />
+    <Compile Include="Assets\GlobalData.cs" />
     <Compile Include="Assets\Scripts\Classes\Resources\FoodResource.cs" />
     <Compile Include="Assets\Scripts\Classes\Resources\BeerResource.cs" />
-    <Compile Include="Assets\Scripts\EnumCityClasses.cs" />
-    <Compile Include="Assets\Scripts\ResourceFactory.cs" />
+    <Compile Include="Assets\Scripts\EnumS\EnumCityClasses.cs" />
+    <Compile Include="Assets\Scripts\Classes\Resources\ResourceFactory.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IServiceman.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IConsumer.cs" />
-    <Compile Include="Assets\GlobalStarter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

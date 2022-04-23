@@ -17,11 +17,18 @@ public interface ISettlement
     void CreateDefenseArea(int amount);
     void CreateLivingArea(int amount);
     void CreateWorkerArea(int amount);
+    List<Strat> GetStrats();
     float GetCrimeRate();
     float GetInfrastucture();
     float GetPiety();
     int GetWorkArea();
     int GetFreeArea();
     int GetDefenseArea();
+    void SubscribeStrat(Strat strat);
 
+    Market GetMarket();
+
+    Noble GetOwner();
+    void SetOwner(Noble noble);
+    float GetTaxRate();
 }

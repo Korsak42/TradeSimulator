@@ -4,14 +4,18 @@ public class Market : MonoBehaviour, IMarket
 {
     [SerializeField]
     public Warehouse Warehouse;
-
-    public void Start()
+    private void Awake()
     {
-
+        SubscribeMarket();
     }
     public void GlobalInit()
     {
         Warehouse.TestInit();
+    }
+
+    public void SubscribeMarket()
+    {
+        GlobalData.instance.SubscribeMarket(this);
     }
 
     public float CalculatePrice(Resource resource, double needsAmount, double warehouseAmount)
@@ -30,6 +34,7 @@ public class Market : MonoBehaviour, IMarket
 
     public float CalculateSellPrice(Resource resource, double amount)
     {
+        Debug.Log("Calculating Sell Price");
         var resourceList = DataKeeper.instance.GetResourceList();
         var returnValue = (float)(amount / Warehouse.GetAmount(resource) * Mathf.Pow(resourceList.GetDefaultPrice(resource.Name), 2)) * 0.95f ;
         return returnValue;

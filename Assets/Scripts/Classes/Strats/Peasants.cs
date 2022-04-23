@@ -1,17 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Sirenix.OdinInspector;
-using System;
-using System.Linq;
+
 
 public class Peasants : ProduceStrat, IBuyer, ISeller
 {
-
-    [Button]
-    public Resource GetResourceFromNeeds(EnumResource.ResourceName resourceName)
+    private double CurrentTurnProfit;
+    public override void GlobalInit()
     {
-        return Needs.FirstOrDefault(x => x.Name == resourceName);
+        StratType = EnumStrats.Peasants;
+        base.GlobalInit();
     }
     public override void Produce()
     {
@@ -19,4 +14,6 @@ public class Peasants : ProduceStrat, IBuyer, ISeller
         var producedFoodAmount = UnityEngine.Random.Range(1, Settlement.GetFreeArea()) * ProductivityRate;
         Warehouse.ChangeAmount(ResourceFactory.CreateResource(EnumResource.ResourceName.Food), producedFoodAmount);
     }
+
+
 }

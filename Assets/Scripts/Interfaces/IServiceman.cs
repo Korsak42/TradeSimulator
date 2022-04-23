@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IServiceman 
 {
-    void ServiceWork(double amountConsumpted, double amountNeeded);
+    void ServiceWork();
 
 }

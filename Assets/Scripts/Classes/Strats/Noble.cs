@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Linq;
 
-public class Noble : MonoBehaviour
+public class Noble : Strat, INoble
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        GlobalLinkStrat();
+        SubscribeNoble();
+    }
+    public override void GlobalInit()
+    {
+        StratType = EnumStrats.Noble;
+        Settlement.SetOwner(this);
+        base.GlobalInit();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CollectTaxes(double amount)
     {
-        
+        ChangeGold(amount, true);
+    }
+
+    public void SubscribeNoble()
+    {
+        GlobalData.instance.SubscribeNoble(this);
     }
 }

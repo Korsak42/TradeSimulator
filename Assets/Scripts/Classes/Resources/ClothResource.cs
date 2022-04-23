@@ -15,13 +15,11 @@ public class ClothResource : Resource
         {
             consumer.ChangeHealth(DataKeeper.instance.Constants.MinFloatStep * ratio, false);
             consumer.ChangeHappy(DataKeeper.instance.Constants.MinFloatStep * ratio, false);
-            consumer.ChangeProductivityRate(DataKeeper.instance.Constants.MinFloatStep * ratio, false);
         }
         else
         {
             consumer.ChangeHealth(DataKeeper.instance.Constants.MinFloatStep * ratio, true);
             consumer.ChangeHappy(DataKeeper.instance.Constants.MinFloatStep * ratio, true);
-            consumer.ChangeProductivityRate(DataKeeper.instance.Constants.MinFloatStep * ratio, true);
         }
     }
 

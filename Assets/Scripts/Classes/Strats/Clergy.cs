@@ -1,7 +1,12 @@
 
 public class Clergy : Serviceman
 {
-    public override void ServiceWork(double amountConsumpted, double amountNeeded)
+    public override void GlobalInit()
+    {
+        StratType = EnumStrats.Clergy;
+        base.GlobalInit();
+    }
+    public override void ServiceWork()
     {
         if (Happy > 1)
         {

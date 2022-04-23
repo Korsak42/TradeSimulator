@@ -3,10 +3,15 @@ using UnityEngine;
 
 public class Beggars : Serviceman
 {
-    public override void ServiceWork(double amountConsumpted, double amountNeeded)
+    public override void GlobalInit()
     {
-        var amountToFind = amountNeeded - amountConsumpted;
-        var amountFound = SearchForLeavings(TurnRepeater.Strats, amountToFind);
+        StratType = EnumStrats.Beggars;
+        base.GlobalInit();
+    }
+    public override void ServiceWork()
+    {
+        var amountToFind = DemandModule.demands[ResourceFactory.CreateResource(EnumResource.ResourceName.Leavings)];
+        var amountFound = SearchForLeavings(Settlement.GetStrats(), amountToFind);
         if (amountToFind > amountFound)
         {
             Settlement.ChangeCrimeRate(DataKeeper.instance.Constants.MinFloatStep, false);

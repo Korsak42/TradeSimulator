@@ -3,7 +3,14 @@ using UnityEngine;
 
 public class Soldiers : Serviceman
 {
-    public override void ServiceWork(double amountConsumpted, double amountNeeded)
+
+    public override void GlobalInit()
+    {
+        StratType = EnumStrats.Soldiers;
+        base.GlobalInit();
+        
+    }
+    public override void ServiceWork()
     {
         if (GetHappy() > 1)
         {
@@ -11,7 +18,7 @@ public class Soldiers : Serviceman
         }
         else
         {
-            Robbery(TurnRepeater.Strats);
+            Robbery(Settlement.GetStrats());
         }
     }
 

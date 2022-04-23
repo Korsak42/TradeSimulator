@@ -1,13 +1,19 @@
 using Sirenix.OdinInspector;
 using System;
+using UnityEngine;
 public class ProduceStrat : Strat, IProducer
 {
     public Resource ProductionResource;
+
+    private void Awake()
+    {
+        GlobalLinkStrat();
+        SubsribeProducer();
+    }
     [Button]
     public void ProducerGlobalInit()
     {
         SetProductionResource();
-        SubsribeProducer();
     }
     [Button]
     public void ProduceCycle()
@@ -44,7 +50,7 @@ public class ProduceStrat : Strat, IProducer
 
     public void SubsribeProducer()
     {
-        TurnRepeater.SubsribeProducer(this);
+        GlobalData.instance.SubsribeProducer(this);
     }
     [Button]
     public void SellProductedResource()
@@ -54,11 +60,20 @@ public class ProduceStrat : Strat, IProducer
             var amountOfDemands = DemandModule.demands[ProductionResource];
             var divider = DemandModule.CalculateReserveDivider(Warehouse.GetAmount(ProductionResource), amountOfDemands);
             var amountToSold = Math.Min(amountOfDemands * divider, Warehouse.GetAmount(ProductionResource));
+            PayTaxes(amountToSold);
             SellGood(ProductionResource, amountToSold);
         }
         else
         {
             SellGood(ProductionResource, Warehouse.GetAmount(ProductionResource));
         }
+    }
+
+    public void PayTaxes(double amountToSold)
+    {
+        var tax = (Market.CalculateSellPrice(ProductionResource, amountToSold) * amountToSold) / 100 * Settlement.GetTaxRate();
+        Settlement.GetOwner().CollectTaxes(tax);
+        ChangeGold(tax, false);
+        Debug.Log($"{StratType} payed {tax} to feudal");
     }
 }

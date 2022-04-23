@@ -12,8 +12,5 @@ public class GlobalLink : MonoBehaviour
     {
         instance = this;
     }
-    public void TurnRepeaterLink (Strat strat)
-    {     
-        strat.TurnRepeater = TurnRepeater;
-    }
+
 }

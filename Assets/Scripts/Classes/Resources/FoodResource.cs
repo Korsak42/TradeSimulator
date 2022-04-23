@@ -13,14 +13,10 @@ public class FoodResource : Resource
         if (ratio > 1f)
         {
             consumer.ChangeHealth(DataKeeper.instance.Constants.MinFloatStep * ratio, false);
-            consumer.ChangeHappy(DataKeeper.instance.Constants.MinFloatStep, false);
-            consumer.ChangeProductivityRate(DataKeeper.instance.Constants.MinFloatStep, false);
         }
         else
         {
             consumer.ChangeHealth(DataKeeper.instance.Constants.MinFloatStep, true);
-            consumer.ChangeHappy(DataKeeper.instance.Constants.MinFloatStep, true);
-            consumer.ChangeProductivityRate(DataKeeper.instance.Constants.MinFloatStep, true);
         }
     }
 
