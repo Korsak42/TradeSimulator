@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578389e4970a1f841b06a81348996595, type: 3}
+  m_Name: Sprites
+  m_EditorClassIdentifier: 
+  Colors:
+  - {r: 0.43921572, g: 0.5764706, b: 0.32941177, a: 0}
+  - {r: 0.69411767, g: 0.627451, b: 0.38431376, a: 0}
+  - {r: 0.3529412, g: 0.29411766, b: 0.24705884, a: 0}
+  - {r: 0.23529413, g: 0.41960788, b: 0.26666668, a: 0}
+  MeadowSprites:
+  - {fileID: 2800000, guid: c2ba281d48931d747862d686943a6fdc, type: 3}
+  - {fileID: 2800000, guid: 26e8ed323907909448fbb43a4971564f, type: 3}
+  - {fileID: 2800000, guid: edb66594957c3364cbba4009cdd538c4, type: 3}
+  BarrensSprites:
+  - {fileID: 2800000, guid: fa292d1bbad95224f83815a42a2aa97e, type: 3}
+  - {fileID: 2800000, guid: 5ff8df4ce9d82674485b12fb6c411ef0, type: 3}
+  - {fileID: 2800000, guid: ed5a908a13b846d4e8c8ece28f5128b1, type: 3}
+  ForestSprites:
+  - {fileID: 2800000, guid: 539bf3f645e0b784a8f27038d316ea2b, type: 3}
+  - {fileID: 2800000, guid: 0237b51efb5c0de44b485551e7148331, type: 3}
+  - {fileID: 2800000, guid: 2b6b63a6cf4aacd4eb754d3024d1c13e, type: 3}
+  MountainSprites:
+  - {fileID: 2800000, guid: 8e0097884ab89bc46b0454adba5f6dcb, type: 3}
+  - {fileID: 2800000, guid: 861fc1fa0ebcb1e41936894a8dd41ebd, type: 3}
+  - {fileID: 2800000, guid: e76f24fb4df2fc94d99eca5f6858cf8c, type: 3}
+  HillSprites:
+  - {fileID: 2800000, guid: 4e18122e709e5414781d02d226e27e55, type: 3}
+  - {fileID: 2800000, guid: 4e9f8dcb7d544854da1ba7afc0a83ec5, type: 3}
+  - {fileID: 2800000, guid: 3a465d3813066414589e4d4fdadeeb33, type: 3}
