@@ -4,6 +4,8 @@ using System.Linq;
 
 public class Noble : Strat, INoble
 {
+    public float BureaucratsSalary;
+    public float SoldiersSalary;
     private void Awake()
     {
         GlobalLinkStrat();
@@ -24,5 +26,11 @@ public class Noble : Strat, INoble
     public void SubscribeNoble()
     {
         GlobalData.instance.SubscribeNoble(this);
+    }
+
+    public void PaySalary(Strat strat, double salary)
+    {
+        ChangeGold(salary, false);
+        strat.ChangeGold(salary, true);
     }
 }

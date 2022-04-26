@@ -32,4 +32,6 @@ public class Bureaucrats : Serviceman
         SellGood(resource, amountOfMaterialsToSold);
         Gold -= totalCost / 2;
     }
+
+
 }
