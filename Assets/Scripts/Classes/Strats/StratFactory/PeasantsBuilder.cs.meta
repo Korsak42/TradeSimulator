@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: d3ccbb5101388df4bbf7b0a119ee6f99
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - PeasantsPrefab: {fileID: 1078931059332634779, guid: b7594056ff8187e4f871f2c55ca45a8d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 4edaf7672aaa26540ad0a782347ea9db
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - CityPrefab: {fileID: 4520005963555347475, guid: 041c63bfff046ce40a41db149ce543c4, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

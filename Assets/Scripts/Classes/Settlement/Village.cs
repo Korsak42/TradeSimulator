@@ -7,8 +7,4 @@ using Sirenix.OdinInspector;
 public class Village : Settlement
 {
 
-
-
-
-
 }

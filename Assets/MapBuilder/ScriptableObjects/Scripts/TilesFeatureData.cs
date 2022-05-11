@@ -11,6 +11,7 @@ public class TilesFeatureData : ScriptableObject
     public List<Texture> MountainSprites;
     public List<Texture> HillSprites;
 
+    public List<Texture> CityIcons;
     public Texture GetRandomTileFeature(EnumTerrain terrain)
     {
         switch (terrain)
@@ -61,8 +62,29 @@ public class TilesFeatureData : ScriptableObject
                 }
             case EnumTerrain.Hill:
                 {
-                    return Colors[3];
+                    return Colors[4];
                 }
+            case EnumTerrain.Sea:
+                {
+                    return Colors[5];
+                }
+            case EnumTerrain.Coastline:
+                {
+                    return Colors[6];
+                }
+            case EnumTerrain.Marsh:
+                {
+                    return Colors[7];
+                }
+            case EnumTerrain.Highlands:
+                {
+                    return Colors[8];
+                }
+            case EnumTerrain.Woods:
+                {
+                    return Colors[9];
+                }
+
         }
         return new Color();
     }
@@ -76,6 +98,33 @@ public class TilesFeatureData : ScriptableObject
     public Texture GetRandomTileFeatureFromList(List<Texture> sprites)
     {
         return sprites[Random.Range(0, sprites.Count)];
+    }
+
+
+
+    public Texture GetCityIcon(EnumCityClasses cityClass)
+    {
+        switch (cityClass)
+        {
+            case EnumCityClasses.Village:
+                {
+                    return CityIcons[0];
+                }
+            case EnumCityClasses.Town:
+                {
+                    return CityIcons[1];
+                }
+            case EnumCityClasses.City:
+                {
+                    return CityIcons[2];
+                }
+            case EnumCityClasses.Capital:
+                {
+                    return CityIcons[3];
+                }
+        }
+        Debug.LogError($"There is no icon for {cityClass} in TilesFeatureData");
+        return null;
     }
 
 }

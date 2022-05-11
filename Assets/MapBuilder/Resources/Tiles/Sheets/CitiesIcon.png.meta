@@ -1,0 +1,1643 @@
+fileFormatVersion: 2
+guid: 74f1b85ef823eed46bc58edfc48f7c4c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CitiesIcon_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 894
+        width: 218
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e85dc0cfc0236d42a898a7cd27a7356
+      internalID: 1303614255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_4
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 975
+        width: 154
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae20742eaf79b74cb1f3e5fa888bdc1
+      internalID: 1561725126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_5
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 979
+        width: 57
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32fc20129b4582942b59cbe668130257
+      internalID: 1929669826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_6
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 925
+        width: 144
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58b11d1383071fe47b643725cec142cc
+      internalID: -857753338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_7
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 943
+        width: 60
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 713d8b53ab181d54b9e555cc6eda6c46
+      internalID: -132791320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_8
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 859
+        width: 116
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a188e6eeeda7f8a48a239da1f5af98bb
+      internalID: 1469642363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_9
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 805
+        width: 65
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9b66e38a130f046b97b57d5b4f3f19
+      internalID: -1320953174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_10
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 766
+        width: 154
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b8cbad790e7c448b735b5c03fd8318
+      internalID: -280155008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_11
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 865
+        width: 85
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae16fbfc9fed0746949e4d975602056
+      internalID: -778637640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 763
+        width: 126
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2b7d51790e7b994f8db65678c377472
+      internalID: -778347701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_13
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 753
+        width: 77
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63128c6b3e8d51499e700cea4798178
+      internalID: -1435778755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_14
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 779
+        width: 73
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 919ecc936e197614b956a2256fe017df
+      internalID: -2030624550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_15
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 611
+        width: 127
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c394903a6ce376842bd7dcf800175678
+      internalID: 1874865456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_16
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 685
+        width: 59
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e976091b0f95eb47b4fb61905baaba4
+      internalID: 1084092686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_17
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 701
+        width: 80
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a19dac3f130b9334f9cb24cf93d46d46
+      internalID: 1427846657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_18
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 679
+        width: 42
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6639e79cc17a0484baa3504b7a0c4f20
+      internalID: -1874494326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_19
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 710
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641556fa2c852e347876460b2850087c
+      internalID: 785185693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_20
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 575
+        width: 69
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ba0e09a0972cc42a7eeeef5ee08d69
+      internalID: -1303722364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_21
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 595
+        width: 84
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2a7a24d156876408bf75822ca21fa6
+      internalID: -241566972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_22
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 589
+        width: 44
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5639f4fe57087a84087fd60ea292b339
+      internalID: 1111242846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_23
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 641
+        width: 74
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f9e3b5b7ed2944190ebdeda501a57a
+      internalID: 1109779684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_24
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 579
+        width: 31
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc324c0b0769b24fbfa7f5030756690
+      internalID: -1634247087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_25
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 561
+        width: 56
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f55e0fc1d9f5c44b85dc1ce880f460
+      internalID: -1832256565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_26
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 546
+        width: 12
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dec2dd8f098e934fb1df7e555b76d46
+      internalID: -36114577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_27
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 583
+        width: 71
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb7f56bdaeb83442b5a669f1f5d711a
+      internalID: -1039557111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_28
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 526
+        width: 51
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d694103dcab1a478709fdf95eba41f
+      internalID: 1084100956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_29
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 542
+        width: 40
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e18a391ae02cc84885358ebed0dbb7e
+      internalID: -1072788017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_30
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 546
+        width: 65
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa783c38b7a0dcf41a9612b08abe1813
+      internalID: -1116659844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_31
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 503
+        width: 48
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56a1591d34581c4a93cf28e28789b84
+      internalID: -1948157100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_32
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 545
+        width: 57
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db6435f84988dff439b591b52d988f70
+      internalID: -1285293536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_33
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 552
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6417dde4f321bf44ba4daa7dbeb32850
+      internalID: 1050736437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_34
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 495
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eafe811934866a4592585eb8b2cbcbe
+      internalID: -259623131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_35
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 514
+        width: 48
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117cb9335f8dc9043aeddd8e1b1ac0fb
+      internalID: -1984178146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_36
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 502
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f612773e2eebbc498ecbac21122d269
+      internalID: 1644778856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_37
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 529
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4ff5a630f15204b8f7857913ffb0d1
+      internalID: 1851398691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_38
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 522
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f1bdc27980358044a290580126af5b1
+      internalID: 1327848424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_39
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 442
+        width: 51
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3177388f00830b244b9efe440cc506bd
+      internalID: -1371991437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_40
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 508
+        width: 39
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac67eaebffd61a4c8139e69a387fa6c
+      internalID: 889761438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_41
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 503
+        width: 38
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 566da2b6dc2e2ea4491c4158f16c47d3
+      internalID: -1525240873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_42
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 481
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29b2275f7c1b58b4e8971ac344d17e47
+      internalID: 1403885791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_43
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 471
+        width: 36
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2b8044605e48949ac7971f6eb7cdca
+      internalID: -2134651325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_44
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 458
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3ec7180daf976459e42e2ab264c223
+      internalID: 1728706000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_45
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 470
+        width: 36
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d266de0485040b4099b0a60d6c4ed42
+      internalID: -1486276938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_46
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 477
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 140a946490c31d048af38a375c0eed88
+      internalID: 61408873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_47
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 397
+        width: 37
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6052978a32ff18446b32fb224d46afb3
+      internalID: 64293351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_48
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 419
+        width: 46
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c992968561ac0439c7dd8c58f589ce
+      internalID: -876057335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_49
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 402
+        width: 42
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 254cc8bb74cacff4a987a638ba00692c
+      internalID: -1976494244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_50
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 442
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23c52cfdd90cbd6499b009940993e7b0
+      internalID: -1396683494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_51
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 378
+        width: 38
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95a3aa7e76651d341bc6a1f9dc2a2d6e
+      internalID: 281569154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_52
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 455
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d90576f6eceac644a42516355557a59
+      internalID: 1827351321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_53
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 391
+        width: 44
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0576254ad839874abb35105731c3e56
+      internalID: -1164637459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_54
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 370
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b877fb67d433a9a48af03f99636357b9
+      internalID: 461605116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_55
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 387
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd91818977e99d84ab479cbdf87da2b4
+      internalID: 2138221125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_56
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 402
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b34befceb215f4ab3c8b40c10301c5
+      internalID: 271924896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_57
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 383
+        width: 37
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f8b0bea109485b4b91ceb8f63d1f49f
+      internalID: -591046972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_58
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 349
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9a537ce27496845bb8a6004939c41c
+      internalID: 1065378146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_59
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 347
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188af8439eb8948459f0c91ce1d9de61
+      internalID: -586098285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_60
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 359
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c63fc503a32ac94cbbe4e2beab3f177
+      internalID: 820930746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_61
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 364
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2530d89779682f4aa793a8ba11df87a
+      internalID: -873431387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_62
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 340
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97a83f1a583ba3542a5cbb079c76d420
+      internalID: 272554707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_63
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 323
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d698e9061e23054e856cc547782cb70
+      internalID: 1158264739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_64
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 325
+        width: 9
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d649f872ebb161346be1d3e2eb7ec916
+      internalID: 71023463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_65
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 325
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed5fa2c10aa2b44793db1d78c1a737d
+      internalID: 1904038848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_66
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 347
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d50752071d6bd244b17809831d3b666
+      internalID: -140857936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_67
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 319
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cafa7e71a7195154a83cb166a34ea092
+      internalID: -1800323954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_68
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 318
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13e5d9f54fc64c49a4661470a108037
+      internalID: 377735617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_69
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 250
+        width: 27
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09c6ab2da9bc07640a4f2162c424234b
+      internalID: 1893823798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_70
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 297
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67b2cde9ccebd3a41bf3deff861cb6b1
+      internalID: -2114170089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CitiesIcon_71
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 291
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea400035b09805340a9d56a21323df17
+      internalID: 216208372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b95e6792207a15e4fae0c34919704941
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CitiesIcon_26: -36114577
+      CitiesIcon_48: -876057335
+      CitiesIcon_46: 61408873
+      CitiesIcon_29: -1072788017
+      CitiesIcon_6: -857753338
+      CitiesIcon_2: -1240775480
+      CitiesIcon_17: 1427846657
+      CitiesIcon_47: 64293351
+      CitiesIcon_4: 1561725126
+      CitiesIcon_16: 1084092686
+      CitiesIcon_35: -1984178146
+      CitiesIcon_14: -2030624550
+      CitiesIcon_31: -1948157100
+      CitiesIcon_15: 1874865456
+      CitiesIcon_19: 785185693
+      CitiesIcon_34: -259623131
+      CitiesIcon_25: -1832256565
+      CitiesIcon_49: -1976494244
+      CitiesIcon_37: 1851398691
+      CitiesIcon_42: 1403885791
+      CitiesIcon_55: 2138221125
+      CitiesIcon_22: 1111242846
+      CitiesIcon_52: 1827351321
+      CitiesIcon_71: 216208372
+      CitiesIcon_44: 1728706000
+      CitiesIcon_39: -1371991437
+      CitiesIcon_18: -1874494326
+      CitiesIcon_68: 377735617
+      CitiesIcon_51: 281569154
+      CitiesIcon_3: -1105795318
+      CitiesIcon_7: -132791320
+      CitiesIcon_70: -2114170089
+      CitiesIcon_36: 1644778856
+      CitiesIcon_69: 1893823798
+      CitiesIcon_61: -873431387
+      CitiesIcon_0: 1303614255
+      CitiesIcon_20: -1303722364
+      CitiesIcon_1: 1660899827
+      CitiesIcon_33: 1050736437
+      CitiesIcon_60: 820930746
+      CitiesIcon_45: -1486276938
+      CitiesIcon_64: 71023463
+      CitiesIcon_12: -778347701
+      CitiesIcon_41: -1525240873
+      CitiesIcon_38: 1327848424
+      CitiesIcon_57: -591046972
+      CitiesIcon_13: -1435778755
+      CitiesIcon_8: 1469642363
+      CitiesIcon_63: 1158264739
+      CitiesIcon_24: -1634247087
+      CitiesIcon_65: 1904038848
+      CitiesIcon_10: -280155008
+      CitiesIcon_54: 461605116
+      CitiesIcon_27: -1039557111
+      CitiesIcon_32: -1285293536
+      CitiesIcon_67: -1800323954
+      CitiesIcon_58: 1065378146
+      CitiesIcon_11: -778637640
+      CitiesIcon_40: 889761438
+      CitiesIcon_30: -1116659844
+      CitiesIcon_21: -241566972
+      CitiesIcon_56: 271924896
+      CitiesIcon_59: -586098285
+      CitiesIcon_50: -1396683494
+      CitiesIcon_23: 1109779684
+      CitiesIcon_9: -1320953174
+      CitiesIcon_5: 1929669826
+      CitiesIcon_28: 1084100956
+      CitiesIcon_66: -140857936
+      CitiesIcon_53: -1164637459
+      CitiesIcon_43: -2134651325
+      CitiesIcon_62: 272554707
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

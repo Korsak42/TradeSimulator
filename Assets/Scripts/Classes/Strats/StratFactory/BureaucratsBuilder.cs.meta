@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 39c3becd617842240a3688ebc1423295
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - BureaucratsPrefab: {fileID: 5998311735281317713, guid: dfcf3d96cefdcaf44a1ff569e82b081a, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,6 +8,7 @@ using Sirenix.OdinInspector;
 public class Settlement : MonoBehaviour, ISettlement
 {
     public string Name;
+    public List<EnumStrats> StratsInit;
 
     public List<Strat> Strats;
     public Noble Owner;
@@ -15,7 +16,7 @@ public class Settlement : MonoBehaviour, ISettlement
 
     public Market SettlementMarket;
 
-    public EnumCityClasses cityClass;
+    public EnumCityClasses SettlementClass;
     public int CityLandmass;
     private float piety;
     public float Piety
@@ -62,8 +63,9 @@ public class Settlement : MonoBehaviour, ISettlement
         SettlementMarket = GetComponentInChildren<Market>();
     }
 
-    public void GlobalInit()
+    public virtual void GlobalInit()
     {
+        CityLandmass = UnityEngine.Random.Range(200, 2000);
         SetCityStructure();
     }
 
@@ -163,7 +165,7 @@ public class Settlement : MonoBehaviour, ISettlement
     [Button]
     public void SetCityStructure()
     {
-        CityParts = DataKeeper.instance.GetCityStructure(cityClass);
+        CityParts = DataKeeper.instance.GetCityStructure(SettlementClass);
         foreach (var key in CityParts.Keys.ToList())
         {
             CityParts[key] = (int)(CityLandmass / 100 * CityParts[key]);

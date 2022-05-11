@@ -74,8 +74,12 @@ public class HexCoordinates
 			X.ToString() + ", " + Y.ToString() + ", " + Z.ToString() + ")";
 	}
 
-	public string ToStringOnSeparateLines()
+	public int DistanceTo(HexCoordinates other)
 	{
-		return X.ToString() + "  " + Y.ToString() + "  " + Z.ToString();
+		return
+			((x < other.x ? other.x - x : x - other.x) +
+			(Y < other.Y ? other.Y - Y : Y - other.Y) +
+			(z < other.z ? other.z - z : z - other.z)) / 2;
 	}
+
 }

@@ -7,7 +7,6 @@ public class ProduceStrat : Strat, IProducer
 
     private void Awake()
     {
-        GlobalLinkStrat();
         SubsribeProducer();
     }
     [Button]

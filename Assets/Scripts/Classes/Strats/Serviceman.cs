@@ -4,7 +4,6 @@ public class Serviceman : Strat, IServiceman
     public float Salary;
     private void Awake()
     {
-        GlobalLinkStrat();
         SubscribeServiceman();
     }
 

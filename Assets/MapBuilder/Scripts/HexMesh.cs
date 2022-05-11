@@ -6,9 +6,9 @@ public class HexMesh : MonoBehaviour
 {
 
 	Mesh hexMesh;
-	List<Vector3> vertices = new List<Vector3>();
-	List<int> triangles = new List<int>();
-	List<Color> colors = new List<Color>();
+	static List<Vector3> vertices = new List<Vector3>();
+	static List<int> triangles = new List<int>();
+	static List<Color> colors = new List<Color>();
 
 
 	MeshCollider meshCollider;
@@ -25,15 +25,15 @@ public class HexMesh : MonoBehaviour
 	}
 
 	public void PaintUV()
-    {
+	{
 		List<Vector2> vector2s = new List<Vector2>();
 		foreach (Vector3 vector3 in vertices)
-        {
+		{
 			vector2s.Add(new Vector2(vector3.x, vector3.z));
-        }
+		}
 
 		hexMesh.uv = vector2s.ToArray();
-    }
+	}
 
 	public void Triangulate(HexCell[] cells)
 	{
@@ -83,8 +83,7 @@ public class HexMesh : MonoBehaviour
 	}
 
 	void TriangulateConnection(
-		HexDirection direction, HexCell cell, Vector3 v1, Vector3 v2
-	)
+		HexDirection direction, HexCell cell, Vector3 v1, Vector3 v2)
 	{
 		HexCell neighbor = cell.GetNeighbor(direction);
 		if (neighbor == null)
@@ -97,6 +96,7 @@ public class HexMesh : MonoBehaviour
 
 		AddQuad(v1, v2, v3, v4);
 		AddQuadColor(cell.Color, neighbor.Color);
+
 		HexCell nextNeighbor = cell.GetNeighbor(direction.Next());
 		if (direction <= HexDirection.E && nextNeighbor != null)
 		{

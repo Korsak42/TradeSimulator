@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: b44be1cbb06be6c41b6297842b1683bb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - NoblePrefab: {fileID: 8140343764223941141, guid: 88a40195cadd1024aaf908e75828142b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public  class ResourceFactory
+public class ResourceFactory
 {
     private static Dictionary<EnumResource.ResourceName, Resource> _cache = new();
     public static Resource CreateResource(EnumResource.ResourceName resourceName)

@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 5771d12e730132947b11feab73e2f30f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - ClergyPrefab: {fileID: 4291806380083364830, guid: 0caeadc8c157e1d448c4327c3febafac, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

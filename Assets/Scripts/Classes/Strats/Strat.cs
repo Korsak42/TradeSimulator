@@ -95,6 +95,7 @@ public class Strat : MonoBehaviour, IStrat, IConsumer, IBuyer, ISeller
     [Button]
     public virtual void GlobalInit()
     {
+        GlobalLinkStrat();
         Market = Settlement.GetMarket();
         ChangeHealth(1f, true);
         ChangeHappy(1f, true);

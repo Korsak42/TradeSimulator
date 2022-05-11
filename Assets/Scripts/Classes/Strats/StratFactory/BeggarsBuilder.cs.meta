@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: ec9d14910d1e43849a0c0cfac3d2fbc0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - BeggarsPrefab: {fileID: 2505902091197548924, guid: 7e19ad10aa5c4b349bc2fdd146f3d769, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

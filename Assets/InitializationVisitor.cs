@@ -14,12 +14,7 @@ public class InitializationVisitor : SerializedMonoBehaviour
 
     private void Start()
     {
-        SettlementInit(GlobalData.instance.Settlements);
-        StratInit(GlobalData.instance.Strats);
-        MarketInit(GlobalData.instance.Markets);
-        ProducerInit(GlobalData.instance.Producers);
-        ServicemanInit(GlobalData.instance.Servicemen);
-        NobleInit(GlobalData.instance.Nobles);
+
     }
 
     private void StratInit(List<Strat> strats)

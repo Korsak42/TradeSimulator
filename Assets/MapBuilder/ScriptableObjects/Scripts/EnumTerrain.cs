@@ -5,4 +5,9 @@ public enum EnumTerrain
     Mountain,
     Forest,
     Hill,
+    Sea,
+    Coastline,
+    Marsh,
+    Highlands,
+    Woods,
 }

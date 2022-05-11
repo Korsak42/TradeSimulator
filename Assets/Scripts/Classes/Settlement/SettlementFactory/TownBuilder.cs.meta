@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: d45dd06108660cf47adde3652cda5643
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - TownPrefab: {fileID: 6839262442233245144, guid: b2cd1a04239ab4b4382e9da76c7465ee, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

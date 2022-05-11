@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: d3beed95057e34c4f93d7d5f763af757
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - VillagePrefab: {fileID: 5300971470408682752, guid: c0d33b8688f40ab45890b87b6c175836, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
