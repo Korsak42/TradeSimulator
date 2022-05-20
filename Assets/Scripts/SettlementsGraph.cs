@@ -6,7 +6,7 @@ using System;
 [ShowOdinSerializedPropertiesInInspector]
 public class SettlementsGraph : MonoBehaviour
 {
-
+    public int RoadDistance;
     public List<HexCell> Settlements;
     public struct SettlementsRelation
     {
@@ -30,7 +30,7 @@ public class SettlementsGraph : MonoBehaviour
                 SettlementsRelation relation = new SettlementsRelation();
                 relation.Settlement1 = Settlements[i];
                 relation.Settlement2 = Settlements[y];
-                if (Settlements[i].Coordinates.DistanceTo(Settlements[y].Coordinates) < 8)
+                if (Settlements[i].Coordinates.DistanceTo(Settlements[y].Coordinates) < RoadDistance)
                 {
                     Graph.Add(relation, true);
                 }

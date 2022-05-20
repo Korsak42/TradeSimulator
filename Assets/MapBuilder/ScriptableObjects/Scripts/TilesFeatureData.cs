@@ -56,31 +56,31 @@ public class TilesFeatureData : ScriptableObject
                 {
                     return Colors[2];
                 }
-            case EnumTerrain.Forest:
+            case EnumTerrain.Hill:
                 {
                     return Colors[3];
                 }
-            case EnumTerrain.Hill:
+            case EnumTerrain.Forest:
                 {
                     return Colors[4];
                 }
-            case EnumTerrain.Sea:
+            case EnumTerrain.Woods:
                 {
                     return Colors[5];
                 }
-            case EnumTerrain.Coastline:
+            case EnumTerrain.Marsh:
                 {
                     return Colors[6];
                 }
-            case EnumTerrain.Marsh:
+            case EnumTerrain.Highlands:
                 {
                     return Colors[7];
                 }
-            case EnumTerrain.Highlands:
+            case EnumTerrain.Coastline:
                 {
                     return Colors[8];
                 }
-            case EnumTerrain.Woods:
+            case EnumTerrain.Sea:
                 {
                     return Colors[9];
                 }

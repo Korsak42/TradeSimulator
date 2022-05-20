@@ -1,0 +1,395 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19d8fc368a36e249b952ce2e73c1bcb, type: 3}
+  m_Name: MountainFeatures
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 2800000, guid: 7facc1ac1603eea45aa3fd7937f55492, type: 3}
+    - {fileID: 2800000, guid: 8ee8282c4591d0e4481df3375c8e9a3f, type: 3}
+    - {fileID: 2800000, guid: 7fa901c42107ae341b338c2aa6282326, type: 3}
+    - {fileID: 2800000, guid: 1b116535e1d60a141a06ebac1f1d7d35, type: 3}
+    - {fileID: 2800000, guid: 235be54365c0a5b469d082cb6f2f2098, type: 3}
+    - {fileID: 2800000, guid: 031da3d13ef36cc4ea25c8565ba0ebf2, type: 3}
+    - {fileID: 2800000, guid: e4ed7ff40c80f7c468779759649a7b51, type: 3}
+    - {fileID: 2800000, guid: 744da081166828d41bec30d359205b84, type: 3}
+    - {fileID: 2800000, guid: 10f1cdb1fe1040f449965206580e1e41, type: 3}
+    - {fileID: 2800000, guid: 1903e3f4b9c20ec458712bd2ddd4caf2, type: 3}
+    - {fileID: 2800000, guid: 1f8d553c6af3da740a15f228ff0ee12e, type: 3}
+    - {fileID: 2800000, guid: 662a6df42776da840ad18a647293e70b, type: 3}
+    - {fileID: 2800000, guid: d77462f2107fee04e8ebc4f494b4a6be, type: 3}
+    - {fileID: 2800000, guid: e1f76eb7b1afd8b42aa4d5f7dc8bc5cf, type: 3}
+    - {fileID: 2800000, guid: 5f834f434022add47996f50777148755, type: 3}
+    - {fileID: 2800000, guid: bb6284e73911f7e46b82c08c46ec7e65, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: FeatureTextures
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[UnityEngine.Texture, UnityEngine.CoreModule],[TerrainFeaturesTextures+TextureSize,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[UnityEngine.Texture,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 16
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 2|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 10
+    - Name: Wieght
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 3|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 15
+    - Name: Wieght
+      Entry: 3
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 4|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 15
+    - Name: Wieght
+      Entry: 3
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 5|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 10
+    - Name: Wieght
+      Entry: 3
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 6|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 10
+    - Name: Wieght
+      Entry: 3
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 7|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 15
+    - Name: Wieght
+      Entry: 3
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 6
+    - Name: $v
+      Entry: 7
+      Data: 8|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 12
+    - Name: Wieght
+      Entry: 3
+      Data: 12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 7
+    - Name: $v
+      Entry: 7
+      Data: 9|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 10
+    - Name: Wieght
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 8
+    - Name: $v
+      Entry: 7
+      Data: 10|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 10
+    - Name: Wieght
+      Entry: 3
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 9
+    - Name: $v
+      Entry: 7
+      Data: 11|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 10
+    - Name: Wieght
+      Entry: 3
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 10
+    - Name: $v
+      Entry: 7
+      Data: 12|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 10
+    - Name: Wieght
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 11
+    - Name: $v
+      Entry: 7
+      Data: 13|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 10
+    - Name: Wieght
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 12
+    - Name: $v
+      Entry: 7
+      Data: 14|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 10
+    - Name: Wieght
+      Entry: 3
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 13
+    - Name: $v
+      Entry: 7
+      Data: 15|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 10
+    - Name: Wieght
+      Entry: 3
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 14
+    - Name: $v
+      Entry: 7
+      Data: 16|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 10
+    - Name: Wieght
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 15
+    - Name: $v
+      Entry: 7
+      Data: 17|TerrainFeaturesTextures+TextureSize, Assembly-CSharp
+    - Name: Height
+      Entry: 3
+      Data: 15
+    - Name: Wieght
+      Entry: 3
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

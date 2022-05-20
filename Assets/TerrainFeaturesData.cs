@@ -34,9 +34,9 @@ public class TerrainFeaturesData : MonoBehaviour
             case EnumTerrain.Highlands:
                 return null;
             case EnumTerrain.Marsh:
-                return MarshesFeatures;
+                return null;
             case EnumTerrain.Hill:
-                return HillsFeatures;
+                return null;
             case EnumTerrain.Sea:
                 return null;
             case EnumTerrain.Coastline:

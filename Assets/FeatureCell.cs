@@ -82,10 +82,23 @@ public class FeatureCell : MonoBehaviour
     public void PlaceTexture(EnumTerrain terrainType, RawImage image)
     {
         var featureList = TerrainFeaturesData.instance.GetFeatureList(terrainType);
+        if (featureList == null)
+        {
+            image.color = new Color(0, 0, 0, 0);
+            return;
+        }
+            
         Texture texture = null;
+        var errorCount = 0;
         do
         {
             texture = featureList.GetRandomTexture();
+            errorCount++;
+            if (errorCount > 100)
+            {
+                texture = featureList.GetRandomTexture();
+                break;
+            }
         }
         while (CheckTextureAlreadyInCell(texture));
 

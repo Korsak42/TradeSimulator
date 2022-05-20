@@ -17,7 +17,7 @@ public class HexGridChunk : MonoBehaviour
 
 	public SettlementsGraph SettlementsGraph;
 	public ChunkTerrainBuilder TerrainBuilder;
-	
+
 
 
 	void Awake()
@@ -30,7 +30,7 @@ public class HexGridChunk : MonoBehaviour
 
 	void Start()
 	{
-		
+
 	}
 
 	public void AddCell(int index, HexCell cell)
@@ -41,7 +41,20 @@ public class HexGridChunk : MonoBehaviour
 
 	public void CreateSettlement()
 	{
-		var cell = cells[UnityEngine.Random.Range(0, cells.Length - 1)];
+		HexCell cell = new HexCell();
+		int errorCounter = 0;
+		do
+		{
+			cell = cells[UnityEngine.Random.Range(0, cells.Length - 1)];
+			errorCounter++;
+			if (errorCounter > 100)
+            {
+				cell = cells[UnityEngine.Random.Range(0, cells.Length - 1)];
+				break;
+			}
+		}
+		while (cell.TerrainType == EnumTerrain.Sea);
+		Debug.Log(errorCounter);
 		var neighbours = cell.GetNeighbors();
 		foreach (HexCell c in neighbours)
 		{

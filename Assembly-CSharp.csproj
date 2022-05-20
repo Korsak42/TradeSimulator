@@ -59,14 +59,17 @@
     <Compile Include="Assets\Scripts\Data\CityStructureData.cs" />
     <Compile Include="Assets\Scripts\Classes\Resources\ClothResource.cs" />
     <Compile Include="Assets\Scripts\EnumS\EnumConsumption.cs" />
+    <Compile Include="Assets\MapBuilder\Scripts\HexGraph.cs" />
     <Compile Include="Assets\MapBuilder\Scripts\TerrainFeatures\TerrainFeatures.cs" />
     <Compile Include="Assets\Scripts\StratPlanningModule.cs" />
+    <Compile Include="Assets\MapBuilder\ScriptableObjects\Scripts\TileWieghtsFabric.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IWarehouse.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IMarket.cs" />
+    <Compile Include="Assets\MapBuilder\Scripts\Region.cs" />
     <Compile Include="Assets\Scripts\Classes\Settlement\Capital.cs" />
     <Compile Include="Assets\MapBuilder\Scripts\RoadBuilder.cs" />
+    <Compile Include="Assets\MapBuilder\Scripts\Dejkstra\Path.cs" />
     <Compile Include="Assets\Scripts\EnumS\EnumResource.cs" />
-    <Compile Include="Assets\MapBuilder\Scripts\HexCellPriorityQueue.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IStrat.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\Beggars.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\ProduceStrat.cs" />
@@ -74,6 +77,7 @@
     <Compile Include="Assets\Scripts\Classes\Settlement\Town.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\StratFactory\ArtisansBuilder.cs" />
     <Compile Include="Assets\Scripts\Classes\Settlement\SettlementFactory\VillageBuilder.cs" />
+    <Compile Include="Assets\MapBuilder\Scripts\GraphConnection.cs" />
     <Compile Include="Assets\MapBuilder\Scripts\HexMapCamera.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\StratFactory\ClergyBuilder.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\StratFactory\BureaucratsBuilder.cs" />
@@ -97,7 +101,9 @@
     <Compile Include="Assets\MapBuilder\Scripts\HexMetrics.cs" />
     <Compile Include="Assets\Scripts\Classes\Settlement\SettlementFactory\TownBuilder.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\Bureaucrats.cs" />
+    <Compile Include="Assets\MapBuilder\Scripts\Dejkstra\DGraph.cs" />
     <Compile Include="Assets\FeatureCell.cs" />
+    <Compile Include="Assets\MapBuilder\Scripts\HexMapEditor.cs" />
     <Compile Include="Assets\Scripts\Data\Constants.cs" />
     <Compile Include="Assets\MapBuilder\Scripts\HexCoordinates.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\StratFactory\StratFactory.cs" />
@@ -119,6 +125,7 @@
     <Compile Include="Assets\MapBuilder\Scripts\HexPathfinder.cs" />
     <Compile Include="Assets\Scripts\EnumS\EnumCityStructure.cs" />
     <Compile Include="Assets\Scripts\Classes\Resources\RawMaterialsResource.cs" />
+    <Compile Include="Assets\MapBuilder\Scripts\Dejkstra\Node.cs" />
     <Compile Include="Assets\MapBuilder\Scripts\HexGrid.cs" />
     <Compile Include="Assets\Scripts\Modules\PopulationModifier.cs" />
     <Compile Include="Assets\Scripts\Classes\Strats\Soldiers.cs" />

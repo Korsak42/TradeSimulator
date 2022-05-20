@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.IO;
 
 public class HexCell : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class HexCell : MonoBehaviour
     public HexCoordinates Coordinates;
     public List<GameObject> RoadsSprites;
     public FeatureCellSwitcher FeatureCellSwitcher;
+    public int Weight;
 
     int distance;
     public int Distance
@@ -23,6 +25,8 @@ public class HexCell : MonoBehaviour
             distance = value;
         }
     }
+
+
 
 
 
@@ -46,11 +50,20 @@ public class HexCell : MonoBehaviour
             }
             return false;
         }
+        set
+        {
+            UpdateWeight();
+        }
     }
     public bool isCity;
     public bool isWater;
+    public bool inRegion;
+    public bool isBorder;
     [SerializeField]
     bool[] roads;
+
+    public HexCell PathFrom { get; set; }
+
 
     public int SearchPhase { get; set; }
     public int SearchHeuristic { get; set; }
@@ -64,6 +77,25 @@ public class HexCell : MonoBehaviour
 
     public HexCell NextWithSamePriority { get; set; }
 
+    public void Save(BinaryWriter writer)
+    {
+        writer.Write((byte)TerrainType);
+    }
+
+    public void Load(BinaryReader reader)
+    {
+        TerrainType = (EnumTerrain)reader.ReadByte();
+    }
+
+    public void SetWeight(int weight)
+    {
+        Weight = weight;
+    }
+
+    public void UpdateWeight()
+    {
+        Weight = (int)Weight / 2;
+    }
 
     public HexCell GetNeighbor(HexDirection direction)
     {
@@ -150,5 +182,10 @@ public class HexCell : MonoBehaviour
     public void SetOrderLayer(int i)
     {
         Canvas.sortingOrder = i;
+    }
+
+    public void SetWeight()
+    {
+        SetWeight(TileWieghtsFabric.GetTileWeight(TerrainType));
     }
 }

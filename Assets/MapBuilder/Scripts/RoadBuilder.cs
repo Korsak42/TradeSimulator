@@ -7,10 +7,11 @@ public class RoadBuilder : MonoBehaviour
 {
     public RoadsTilesData RoadsData;
     public HexPathfinder Pathfinder;
+    public HexGraph HexGraph;
 
-    public void CreateRoadBetweenTwoSettlements(HexCell settlementHex1, HexCell settlementHex2)
+    public void CreateRoadBetweenTwoSettlements(HexCell[] cells, HexCell settlementHex1, HexCell settlementHex2)
     {
-        CreateRoadFromPath(Pathfinder.CreatePath(settlementHex1, settlementHex2));
+        CreateRoadFromPath(HexGraph.CreatePath(cells, settlementHex1, settlementHex2));
     }
 
     public void CreateRoadFromPath(List<HexCell> cells)
@@ -28,6 +29,7 @@ public class RoadBuilder : MonoBehaviour
     public void MarkRoadsInCell(HexCell originCell, HexCell targetCell)
     {
         targetCell.AddRoad(targetCell.GetNeighborDirection(originCell));
+        targetCell.UpdateWeight();
     }
 
     public void PlaceRoad(HexCell cell)

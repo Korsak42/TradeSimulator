@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.IO;
 using System.Linq;
 
 using Sirenix.OdinInspector;
@@ -12,12 +13,15 @@ public class HexGrid : MonoBehaviour
     public int cellCountZ;
     public int chunkCountX, chunkCountZ;
 
+    public int RegionsCount;
+
 
     public HexCell CellPrefab;
     public HexGridChunk chunkPrefab;
     public SettlementsGraph SettlementsGraph;
     public RoadBuilder RoadBuilder;
-
+    public MapRegions RegionsBuilder;
+    public HexGraph HexGraph;
     HexGridChunk[] chunks;
 
     HexCell[] cells;
@@ -29,6 +33,31 @@ public class HexGrid : MonoBehaviour
 
 
     int searchFrontierPhase;
+
+    #region UI
+
+    public Toggle DistanceToggle;
+    public Button SaveButton;
+    public Button LoadButton;
+
+    #endregion UI
+
+
+    public void Save(BinaryWriter writer)
+    {
+        for (int i = 0; i < cells.Length; i++)
+        {
+            cells[i].Save(writer);
+        }
+    }
+
+    public void Load(BinaryReader reader)
+    {
+        for (int i = 0; i < cells.Length; i++)
+        {
+            cells[i].Load(reader);
+        }
+    }
 
     void Search(HexCell fromCell, HexCell toCell, int speed)
     {
@@ -58,20 +87,69 @@ public class HexGrid : MonoBehaviour
         ReverseCellSortingLayer();
         //CreateLand(4);
 
+        CreateRegions();
+        SetWeights();
+
+        HexGraph.Create(cells);
+
+        HexMesh.Triangulate(cells);
+
+
         CreateSettlements();
 
         SettlementsGraph.CreateGraph();
 
+
         CreateRoads();
+
 
         CreateFillInCell();
 
         ReverseChunks();
+
+    }
+
+    [Button]
+    public void CreateRoad(HexCell start, HexCell end)
+    {
+        RoadBuilder.CreateRoadFromPath(HexGraph.CreatePath(cells, start, end));
+    }
+
+    public List<HexCell> test(HexCell start, HexCell end)
+    {
+        return HexGraph.CreatePath(cells, start, end);
+    }
+
+
+    public void CreateRegions()
+    {
+        var randomCellIndex = 0;
+        var values = Enum.GetValues(typeof(EnumTerrain));
+        for (int i = 0; i < RegionsCount; i++)
+        {
+            int error = 0;
+            var terrainRandom = (EnumTerrain)UnityEngine.Random.Range(0, values.Length - 3);
+            do
+            {
+                randomCellIndex = UnityEngine.Random.Range(0, cells.Length - 1);
+                error++;
+            }
+            while (cells[randomCellIndex].inRegion || error >= 999);
+            if (RegionsCount == 1)
+                RegionsBuilder.Create(cells[187], EnumTerrain.Mountain);
+            else
+                RegionsBuilder.Create(cells[randomCellIndex], terrainRandom);
+        }
+
+        foreach (Region region in RegionsBuilder.Regions)
+        {
+            ColorizeCells(region.Cells);
+        }
     }
 
     public void ReverseChunks()
     {
-        foreach(HexGridChunk chunk in chunks)
+        foreach (HexGridChunk chunk in chunks)
         {
             chunk.ReverseCellOrderInInspector();
         }
@@ -99,7 +177,7 @@ public class HexGrid : MonoBehaviour
         return cell1.GetNeighborDirection(cell2);
     }
 
-    
+
 
     private void CreateRoads()
     {
@@ -109,7 +187,7 @@ public class HexGrid : MonoBehaviour
         do
         {
             if (settlement1 != null && settlement2 != null)
-                RoadBuilder.CreateRoadBetweenTwoSettlements(settlement1, settlement2);
+                RoadBuilder.CreateRoadBetweenTwoSettlements(cells, settlement1, settlement2);
             SR = SettlementsGraph.GetNextConnectedSettlements();
             settlement1 = SR.Settlement1;
             settlement2 = SR.Settlement2;
@@ -163,9 +241,8 @@ public class HexGrid : MonoBehaviour
         cell.Coordinates = HexCoordinates.FromOffsetCoordinates(x, z);
         SetInitialTerrainType(cell);
         cell.SetOrderLayer(i);
-        ColorCell(cell, TilesData.GetTileColor(cell.TerrainType));
         AddCellToChunk(x, z, cell);
-    
+
         if (x > 0)
         {
             cell.SetNeighbor(HexDirection.W, cells[i - 1]);
@@ -206,6 +283,7 @@ public class HexGrid : MonoBehaviour
     public void SetInitialTerrainType(HexCell cell)
     {
         cell.TerrainType = EnumTerrain.Meadow;
+        ColorCell(cell, TilesData.GetTileColor(cell.TerrainType));
     }
 
     public void ColorCell(HexCell cell, Color color)
@@ -214,6 +292,13 @@ public class HexGrid : MonoBehaviour
         HexMesh.Triangulate(cell);
     }
 
+    public void ColorizeCells(List<HexCell> cells)
+    {
+        foreach(HexCell cell in cells)
+        {
+            ColorCell(cell, TilesData.GetTileColor(cell.TerrainType));
+        }
+    }
 
 
     public void PaintUV()
@@ -225,9 +310,9 @@ public class HexGrid : MonoBehaviour
     {
         foreach (HexGridChunk chunk in chunks)
         {
-            chunk.CreateTerrainFeatures(); 
+            chunk.CreateTerrainFeatures();
         }
-        
+
     }
 
     public void CreateSettlements()
@@ -237,14 +322,11 @@ public class HexGrid : MonoBehaviour
             chunk.CreateSettlement();
         }
     }
-
-    public void FindDistancesTo(HexCell cell)
+    [Button]
+    public void FindPath(HexCell fromCell, HexCell toCell)
     {
-        for (int i = 0; i < cells.Length; i++)
-        {
-            cells[i].Distance =
-                cell.Coordinates.DistanceTo(cells[i].Coordinates);
-        }
+        
+        Search(fromCell, toCell);
     }
     [Button]
     public void CreateLand(int index)
@@ -270,17 +352,32 @@ public class HexGrid : MonoBehaviour
 
     public void ConnectTwoPathes(List<HexCell> path1, List<HexCell> path2)
     {
-        for(int i = 1; i < path1.Count - 1; i++)
+        for (int i = 1; i < path1.Count - 1; i++)
         {
             if (path1[i] != null && path2 != null)
-                CreateLandInPath(Pathfinder.CreatePath(path1[i], path2[i]));  
+                CreateLandInPath(Pathfinder.CreatePath(path1[i], path2[i]));
         }
     }
 
     public void SetTerrainType(HexCell cell)
     {
         var values = Enum.GetValues(typeof(EnumTerrain));
-        cell.TerrainType = (EnumTerrain)UnityEngine.Random.Range(0, values.Length - 2);
+        cell.TerrainType = (EnumTerrain)UnityEngine.Random.Range(0, values.Length - 1);
+
+        ColorCell(cell, TilesData.GetTileColor(cell.TerrainType));
+    }
+
+    public void SetTerrainTypeFromDouble(HexCell cell)
+    {
+        var random = (int)UnityEngine.Random.Range(1, 5);
+        if (random >= 2)
+        {
+            cell.TerrainType = EnumTerrain.Meadow;
+        }
+        else
+        {
+            cell.TerrainType = EnumTerrain.Sea;
+        }
 
         ColorCell(cell, TilesData.GetTileColor(cell.TerrainType));
     }
@@ -292,14 +389,14 @@ public class HexGrid : MonoBehaviour
         {
             cell.TerrainType = EnumTerrain.Mountain;
             ColorCell(cell, TilesData.GetTileColor(cell.TerrainType));
-        }    
+        }
     }
 
 
     public void ReverseCellSortingLayer()
     {
         int j = 0;
-        for(int i = cells.Length - 1; i >= 0; i--)
+        for (int i = cells.Length - 1; i >= 0; i--)
         {
             cells[i].SetOrderLayer(j);
             j++;
@@ -310,5 +407,84 @@ public class HexGrid : MonoBehaviour
     {
         cell.FeatureCellSwitcher.SetPriority();
     }
-}
 
+    public void SetWeights()
+    {
+        foreach (HexCell cell in cells)
+        {
+            cell.SetWeight();
+        }
+    }
+
+    
+    public void Search(HexCell fromCell, HexCell toCell)
+    {
+        Pathfinder.Clear();
+        for (int i = 0; i < cells.Length; i++)
+        {
+            cells[i].Distance = int.MaxValue;
+        }
+        fromCell.Distance = 0;
+        Pathfinder.Enqueue(fromCell);
+        while (Pathfinder.Count > 0)
+        {
+
+            HexCell current = Pathfinder.Dequeue();
+            if (current == toCell)
+            {
+                break;
+            }
+            for (HexDirection d = HexDirection.NE; d <= HexDirection.NW; d++)
+            {
+                HexCell neighbor = current.GetNeighbor(d);
+                if (neighbor == null)
+                {
+                    continue;
+                }
+                if (neighbor.TerrainType == EnumTerrain.Sea)
+                {
+                    continue;
+                }
+                if (neighbor.TerrainType == EnumTerrain.Coastline)
+                {
+                    continue;
+                }
+                if (neighbor.TerrainType == EnumTerrain.Mountain)
+                {
+                    continue;
+                }
+                int distance = current.Distance;
+                distance = neighbor.Weight;
+                if (current.HasRoadThroughEdge(d))
+                {
+                    distance += (int)(neighbor.Weight / 2);
+                }
+                else
+                {
+                    distance += neighbor.Weight;
+                }
+                if (neighbor.Distance == int.MaxValue)
+                {
+
+                    neighbor.Distance = distance;
+                    neighbor.PathFrom = current;
+                    neighbor.SearchHeuristic = neighbor.Coordinates.DistanceTo(toCell.Coordinates);
+                    
+                    Pathfinder.Enqueue(neighbor);
+
+
+                }
+                else if (distance < neighbor.Distance)
+                {
+                    int oldPriority = neighbor.SearchPriority;
+
+                    neighbor.Distance = distance;
+                    Pathfinder.Change(neighbor, oldPriority);
+
+                }
+                
+            }
+
+        }
+    }
+}
